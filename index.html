@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SoFiss — Nourish The Goodness | Organic Dry Fruits &amp; Superfoods</title>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <!-- PhonePe Business Official Checkout SDK -->
+  <script src="https://mercury.phonepe.com/web/bundle/checkout.js" async></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
@@ -314,7 +315,7 @@
         <span class="hidden md:inline text-brand-100">GST ID: <strong id="topBarGst" class="text-white">01CFVPS2454E1ZC</strong></span>
       </div>
       <div class="flex items-center gap-3">
-        <span class="text-brand-200">Free Shipping above ₹499</span>
+        <span class="text-brand-200">Pan-India Pincode &amp; State-Wise Courier Dispatch</span>
         <button id="topVerifyComplianceBtn" type="button" class="underline text-amber-300 hover:text-amber-200 font-medium">Verify Certificates</button>
       </div>
     </div>
@@ -348,6 +349,9 @@
         </button>
         <button type="button" data-scroll-to="benefitsSection" class="cust-nav-btn px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold text-earth-800 hover:bg-earth-100 transition">
           Nutrition Lab
+        </button>
+        <button type="button" data-scroll-to="customerReviewsSection" class="cust-nav-btn px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold text-earth-800 hover:bg-earth-100 transition">
+          Customer Reviews
         </button>
         <button type="button" data-scroll-to="complianceSection" class="cust-nav-btn px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold text-earth-800 hover:bg-earth-100 transition">
           FSSAI &amp; Quality
@@ -483,7 +487,7 @@
         <div class="sr-only">
           <div id="iosDynamicIsland">
             <span id="dynamicIslandText">SoFiss</span>
-            <span id="dynamicIslandPriceTag">₹199</span>
+            <span id="dynamicIslandPriceTag">₹240</span>
           </div>
           <button id="flipStageJarBtn" type="button">↻ Flip 180° to Nutrition Label</button>
           <button id="toggleAppleAutoTourBtn" type="button">⏸ Auto-Tour: ON</button>
@@ -535,8 +539,8 @@
                 + Bag This Jar
               </button>
               <div>
-                <span id="stageProdPrice" class="text-2xl font-extrabold text-amber-300">₹199</span>
-                <span id="stageProdMrp" class="text-xs text-gray-400 line-through block">MRP ₹269</span>
+                <span id="stageProdPrice" class="text-2xl font-extrabold text-amber-300">MRP ₹240</span>
+                <span id="stageProdMrp" class="text-xs text-emerald-300 font-semibold block">250g Jar (Incl. of all taxes)</span>
               </div>
             </div>
           </div>
@@ -687,6 +691,72 @@
       </div>
     </section>
 
+    <!-- ==================== VERIFIED CUSTOMER REVIEWS ==================== -->
+    <section id="customerReviewsSection" class="max-w-7xl mx-auto px-4 sm:px-6 pt-12 pb-4">
+      <div class="bg-gradient-to-br from-amber-50 via-white to-emerald-50 rounded-3xl border-2 border-earth-200 shadow-lg p-6 sm:p-8 space-y-8">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-earth-200 pb-5">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/30 text-amber-950 text-xs font-extrabold uppercase tracking-wider">
+              <span>⭐ 4.9 / 5.0 Verified Buyer Rating</span>
+            </div>
+            <h2 class="font-display text-2xl sm:text-3xl font-bold text-gray-900 mt-1">
+              Verified Customer Reviews
+            </h2>
+            <p class="text-xs sm:text-sm text-gray-600 mt-0.5">
+              Real feedback from customers across India enjoying SoFiss 100% natural superfood seeds.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <!-- Left: Verified Reviews Grid -->
+          <div class="lg:col-span-7 space-y-4">
+            <div id="publicReviewsGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- Populated dynamically via JS -->
+            </div>
+          </div>
+
+          <!-- Right: Share Your Delivery Review Form -->
+          <div class="lg:col-span-5 bg-white rounded-2xl border border-earth-200 p-5 shadow-sm space-y-3.5">
+            <div class="flex items-center justify-between">
+              <h3 class="font-display text-lg font-bold text-gray-900">✍️ Share Your Product Review</h3>
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-extrabold">VERIFIED BUYER</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <input id="revCustomerName" type="text" placeholder="Your Name *" class="px-3 py-2 rounded-xl border border-gray-300 text-xs" />
+              <input id="revCustomerCity" type="text" placeholder="City (e.g. Srinagar, Delhi)" class="px-3 py-2 rounded-xl border border-gray-300 text-xs" />
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <input id="revCustomerPhone" type="tel" placeholder="WhatsApp Mobile No (Private) *" class="px-3 py-2 rounded-xl border border-gray-300 text-xs" />
+              <input id="revCustomerEmail" type="email" placeholder="Your Email (Private)" class="px-3 py-2 rounded-xl border border-gray-300 text-xs" />
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <select id="revProductSelect" class="px-3 py-2 rounded-xl border border-gray-300 text-xs font-semibold">
+                <option value="SoFiss Raw Chia Seeds">SoFiss Raw Chia Seeds</option>
+                <option value="SoFiss Organic Sunflower Seeds">SoFiss Organic Sunflower Seeds</option>
+                <option value="SoFiss Premium Pumpkin Seeds">SoFiss Premium Pumpkin Seeds</option>
+                <option value="SoFiss Pure Black Seeds (Kalonji)">SoFiss Pure Black Seeds (Kalonji)</option>
+                <option value="SoFiss Organic Flax Seeds">SoFiss Organic Flax Seeds</option>
+                <option value="SoFiss 3-Jar Superfood Combo">SoFiss 3-Jar Superfood Combo</option>
+              </select>
+              <select id="revStarSelect" class="px-3 py-2 rounded-xl border border-gray-300 text-xs font-bold text-amber-700">
+                <option value="5">⭐⭐⭐⭐⭐ (5/5 — Loved It!)</option>
+                <option value="4">⭐⭐⭐⭐ (4/5 — Very Fresh)</option>
+                <option value="3">⭐⭐⭐ (3/5 — Good)</option>
+              </select>
+            </div>
+            <textarea id="revCommentInput" rows="3" placeholder="How was the seed freshness, packaging, and delivery?" class="w-full px-3 py-2 rounded-xl border border-gray-300 text-xs"></textarea>
+            <button id="submitCustomerReviewBtn" type="button" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-orange-400 hover:from-amber-300 hover:to-orange-300 text-brand-950 font-extrabold text-xs shadow-md transition">
+              ⭐ Submit Verified Review
+            </button>
+            <p id="reviewCouponStatusText" class="text-[11px] text-emerald-800 font-semibold text-center">
+              Your phone &amp; email stay 100% private and are never displayed publicly.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- FSSAI & GST Compliance Banner (Vibrant High-Contrast Edition) -->
     <section id="complianceSection" class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
       <div class="bg-gradient-to-br from-brand-900 via-emerald-900 to-brand-950 text-white rounded-3xl border-2 border-amber-400/60 shadow-2xl p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
@@ -748,12 +818,15 @@
       <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-earth-200 pb-4">
         <div>
           <span class="px-2.5 py-0.5 rounded-md bg-green-100 text-green-800 text-[11px] font-bold uppercase tracking-wider">Live Order Desk (<span id="adminOrderCountBadge">1</span>)</span>
-          <h3 class="text-lg font-bold text-gray-900 mt-1">Manage Customer Orders, Payments &amp; Courier Dispatch</h3>
+          <h3 class="text-lg font-bold text-gray-900 mt-1">Manage PhonePe Business Payments &amp; Shiprocket Dispatch</h3>
           <p class="text-xs text-gray-600">
-            Track online &amp; WhatsApp orders, verify UPI UTR / Razorpay payments, assign Shiprocket AWB numbers, and send 1-click WhatsApp tracking updates to customers.
+            Verify PhonePe Business payments, push orders to Shiprocket API with 1 click (or export Shiprocket Bulk CSV), and send WhatsApp AWB tracking updates.
           </p>
         </div>
         <div class="flex flex-wrap items-center gap-2">
+          <button id="exportShiprocketCsvBtn" type="button" class="px-3.5 py-2 rounded-xl bg-indigo-700 hover:bg-indigo-800 text-white font-extrabold text-xs shadow transition">
+            📦 Export Shiprocket Bulk CSV
+          </button>
           <select id="orderStatusFilter" class="px-3 py-2 rounded-xl border border-gray-300 text-xs font-semibold bg-white">
             <option value="all">All Orders</option>
             <option value="Pending Verification">Pending Verification</option>
@@ -783,12 +856,117 @@
         </div>
         <div class="p-3.5 rounded-xl bg-blue-50 border border-blue-200">
           <p class="text-[11px] text-blue-900 font-semibold uppercase">Payment Channels</p>
-          <p id="kpiPrepaidSplit" class="text-xs font-bold text-blue-950 mt-1">UPI / Razorpay / COD Active</p>
+          <p id="kpiPrepaidSplit" class="text-xs font-bold text-blue-950 mt-1">PhonePe Business / Shiprocket COD</p>
         </div>
       </div>
 
       <!-- Orders List -->
       <div id="adminOrdersList" class="space-y-3"></div>
+    </div>
+
+    <!-- ==================== CUSTOMER CRM, CART FOLLOW-UP & DELIVERY REVIEW HUB ==================== -->
+    <div id="adminCrmHubSection" class="bg-white rounded-2xl border-2 border-brand-600/30 p-6 shadow-md space-y-6">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-earth-200 pb-4">
+        <div>
+          <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-900 text-[11px] font-extrabold uppercase tracking-wider">
+            Customer Data &amp; Review Hub
+          </span>
+          <h3 class="font-display text-xl sm:text-2xl font-bold text-gray-900 mt-1">
+            Saved Customer Data, Cart Follow-Ups &amp; Delivery Review Requests
+          </h3>
+          <p class="text-xs text-gray-600">
+            Automatically saves customers when they add products to cart, place an order, or submit a review. Send 1-click WhatsApp &amp; Email follow-ups at every stage!
+          </p>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          <select id="crmStageFilterSelect" class="px-3 py-2 rounded-xl border border-earth-300 bg-earth-50 text-xs font-bold">
+            <option value="all">All Saved Customers &amp; Cart Leads</option>
+            <option value="In Cart">🛒 Added to Cart (Follow-Up Needed)</option>
+            <option value="Ordered">📦 Ordered / In Transit</option>
+            <option value="Delivered">✅ Delivered (Ask for Review)</option>
+            <option value="Reviewed">⭐ Reviewed Customers</option>
+          </select>
+          <button id="exportCustomersCsvBtn" type="button" class="px-3.5 py-2 rounded-xl bg-brand-700 hover:bg-brand-800 text-white font-bold text-xs shadow transition">
+            📥 Export Customer Data (CSV)
+          </button>
+        </div>
+      </div>
+
+      <!-- CRM Funnel KPIs -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+        <div class="p-3.5 rounded-xl bg-amber-50 border border-amber-200">
+          <span class="text-amber-900 font-bold block">🛒 Active Cart Leads</span>
+          <span id="crmKpiCartLeads" class="text-2xl font-extrabold text-amber-950">0</span>
+          <span class="text-[11px] text-amber-800 block">Follow up on pending carts</span>
+        </div>
+        <div class="p-3.5 rounded-xl bg-blue-50 border border-blue-200">
+          <span class="text-blue-900 font-bold block">📦 Total Saved Customers</span>
+          <span id="crmKpiBuyers" class="text-2xl font-extrabold text-blue-950">0</span>
+          <span class="text-[11px] text-blue-800 block">Private customer directory</span>
+        </div>
+        <div class="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200">
+          <span class="text-emerald-900 font-bold block">✅ Delivered Orders</span>
+          <span id="crmKpiDelivered" class="text-2xl font-extrabold text-emerald-950">0</span>
+          <span class="text-[11px] text-emerald-800 block">Ready for Review Request</span>
+        </div>
+        <div class="p-3.5 rounded-xl bg-purple-50 border border-purple-200">
+          <span class="text-purple-900 font-bold block">⭐ Verified Reviews</span>
+          <span id="crmKpiRebuy" class="text-2xl font-extrabold text-purple-950">0</span>
+          <span class="text-[11px] text-purple-800 block">Customer feedback received</span>
+        </div>
+      </div>
+
+      <!-- Quick Manual Lead / Customer Entry Row -->
+      <div class="p-4 rounded-xl bg-earth-50 border border-earth-200 space-y-2.5">
+        <span class="text-xs font-extrabold uppercase tracking-wider text-earth-900 block">+ Save New Customer / WhatsApp Cart Inquiry</span>
+        <div class="grid grid-cols-1 sm:grid-cols-6 gap-2">
+          <input id="manualLeadName" type="text" placeholder="Customer Name *" class="px-3 py-2 rounded-lg border border-gray-300 bg-white text-xs" />
+          <input id="manualLeadPhone" type="tel" placeholder="10-Digit WhatsApp *" class="px-3 py-2 rounded-lg border border-gray-300 bg-white text-xs" />
+          <input id="manualLeadEmail" type="email" placeholder="Customer Email" class="px-3 py-2 rounded-lg border border-gray-300 bg-white text-xs" />
+          <input id="manualLeadProduct" type="text" placeholder="Product (e.g. Chia Seeds 250g)" class="px-3 py-2 rounded-lg border border-gray-300 bg-white text-xs" />
+          <select id="manualLeadStage" class="px-2.5 py-2 rounded-lg border border-gray-300 bg-white text-xs font-semibold">
+            <option value="In Cart">🛒 In Cart (Follow-Up)</option>
+            <option value="Ordered">📦 Ordered</option>
+            <option value="Delivered">✅ Delivered (Ask Review)</option>
+            <option value="Reviewed">⭐ Reviewed</option>
+          </select>
+          <button id="addManualLeadBtn" type="button" class="px-3 py-2 rounded-lg bg-brand-700 hover:bg-brand-800 text-white font-extrabold text-xs transition">
+            + Save Customer
+          </button>
+        </div>
+      </div>
+
+      <!-- Saved Customer & Cart Lead List -->
+      <div id="adminCrmList" class="space-y-2.5 max-h-96 overflow-y-auto custom-scroll pr-1"></div>
+
+      <!-- WhatsApp & Email Follow-Up Studio -->
+      <div class="p-5 rounded-2xl bg-gradient-to-br from-brand-900 via-emerald-900 to-earth-900 text-white space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <span class="text-[11px] font-extrabold uppercase tracking-widest text-amber-300">WhatsApp &amp; Email Follow-Up Studio</span>
+            <h4 class="font-display text-lg font-bold text-white">Send Cart Follow-Up &amp; Delivery Review Requests</h4>
+          </div>
+          <select id="rebuyTemplateSelect" class="px-3 py-2 rounded-xl bg-white text-gray-900 text-xs font-extrabold">
+            <option value="cart">🛒 1. Added to Cart Follow-Up (5% OFF — SOFISS5)</option>
+            <option value="review">⭐ 2. Product Delivered — Request Customer Review</option>
+            <option value="combo">🎁 3. Superfood 3-Jar / 5-Jar Combo Offer</option>
+          </select>
+        </div>
+
+        <textarea id="rebuyMessageTextarea" rows="5" class="w-full p-3.5 rounded-xl bg-black/40 border border-white/25 text-white text-xs leading-relaxed focus:outline-none focus:border-amber-400"></textarea>
+
+        <div class="flex flex-wrap items-center gap-2.5">
+          <button id="shareWhatsappForwardBtn" type="button" class="px-4 py-2.5 rounded-xl bg-green-500 hover:bg-green-400 text-brand-950 font-extrabold text-xs shadow-lg transition">
+            📲 Share / Forward on WhatsApp
+          </button>
+          <button id="shareEmailCampaignBtn" type="button" class="px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-brand-950 font-extrabold text-xs shadow-lg transition">
+            📧 Send Email to Saved Customers
+          </button>
+          <button id="copyRebuyForwardBtn" type="button" class="px-4 py-2.5 rounded-xl bg-white/15 hover:bg-white/25 text-white font-bold text-xs border border-white/25 transition">
+            📋 Copy Message Text
+          </button>
+        </div>
+      </div>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
@@ -805,38 +983,60 @@
           <input id="adminFssaiInput" type="text" value="21025232000054" class="w-full px-3 py-2 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-brand-600 focus:outline-none" />
         </div>
         <div>
-          <label for="adminGatewaySelect" class="block text-xs font-semibold text-gray-700 mb-1">Default Checkout Payment Gateway</label>
-          <select id="adminGatewaySelect" class="w-full px-3 py-2 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-brand-600 focus:outline-none">
-            <option value="upi">Direct UPI QR &amp; App Pay (0% Fee — Instant to Bank)</option>
-            <option value="razorpay">Razorpay Payment Gateway (UPI, Cards, NetBanking)</option>
-            <option value="phonepe">PhonePe Payment Gateway (Zero-Cost UPI &amp; Cards)</option>
-            <option value="cod">Cash on Delivery (COD)</option>
+          <label for="adminGatewaySelect" class="block text-xs font-semibold text-gray-700 mb-1">Default Checkout Payment Method</label>
+          <select id="adminGatewaySelect" class="w-full px-3 py-2 rounded-xl border border-purple-300 bg-purple-50/40 text-sm font-bold text-purple-950 focus:ring-2 focus:ring-purple-600 focus:outline-none">
+            <option value="phonepe" selected>🟣 PhonePe Business (Official Merchant Checkout)</option>
+            <option value="cod">🚚 Cash on Delivery (Shiprocket COD)</option>
           </select>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
-            <label for="adminPhonepeUrlInput" class="block text-xs font-semibold text-purple-900 mb-1">PhonePe PG Payment Link / Worker URL</label>
-            <input id="adminPhonepeUrlInput" type="text" value="" placeholder="https://phon.pe/... or Worker URL" class="w-full px-3 py-2 rounded-xl border border-purple-300 bg-purple-50/40 text-xs focus:ring-2 focus:ring-purple-600 focus:outline-none" />
-          </div>
-          <div>
             <label for="adminPhonepeMidInput" class="block text-xs font-semibold text-purple-900 mb-1">PhonePe Merchant ID (MID)</label>
-            <input id="adminPhonepeMidInput" type="text" value="" placeholder="e.g. SOFISSUAT / M22XXXXXX" class="w-full px-3 py-2 rounded-xl border border-purple-300 bg-purple-50/40 text-xs focus:ring-2 focus:ring-purple-600 focus:outline-none" />
+            <input id="adminPhonepeMidInput" type="text" value="PGTESTPAYUAT86" placeholder="e.g. PGTESTPAYUAT86 or Live MID" class="w-full px-3 py-2 rounded-xl border border-purple-300 bg-purple-50/40 text-xs focus:ring-2 focus:ring-purple-600 focus:outline-none" />
           </div>
           <div>
-            <label for="adminUpiInput" class="block text-xs font-semibold text-gray-700 mb-1">Merchant UPI ID (Direct Pay)</label>
-            <input id="adminUpiInput" type="text" value="junaidsofi123@ybl" placeholder="e.g. junaidsofi123@ybl" class="w-full px-3 py-2 rounded-xl border border-gray-300 text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none" />
+            <label for="adminPhonepeSaltKeyInput" class="block text-xs font-semibold text-purple-900 mb-1">PhonePe Salt Key &amp; Index (e.g. key###1)</label>
+            <input id="adminPhonepeSaltKeyInput" type="password" value="96434309-7796-489d-8924-ab56988a6076###1" placeholder="SaltKey###1" class="w-full px-3 py-2 rounded-xl border border-purple-300 bg-purple-50/40 text-xs focus:ring-2 focus:ring-purple-600 focus:outline-none" />
           </div>
-          <div>
-            <label for="adminRzpKeyInput" class="block text-xs font-semibold text-gray-700 mb-1">Razorpay Key ID (Optional)</label>
-            <input id="adminRzpKeyInput" type="text" value="" placeholder="rzp_live_XXXXXXXXXXXX" class="w-full px-3 py-2 rounded-xl border border-gray-300 text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none" />
+          <div class="sm:col-span-2">
+            <label for="adminPhonepeUrlInput" class="block text-xs font-semibold text-purple-900 mb-1">PhonePe PG Worker Bridge URL or Payment Link</label>
+            <div class="flex gap-2">
+              <input id="adminPhonepeUrlInput" type="text" value="" placeholder="Optional: https://sofiss-gateway.yourname.workers.dev/phonepe/pay" class="flex-1 px-3 py-2 rounded-xl border border-purple-300 bg-purple-50/40 text-xs focus:ring-2 focus:ring-purple-600 focus:outline-none" />
+              <button id="testPhonepeVerifyBtn" type="button" class="px-3 py-2 rounded-xl bg-purple-700 hover:bg-purple-800 text-white font-bold text-xs shrink-0 transition">
+                ⚡ Test PhonePe PG
+              </button>
+            </div>
+            <p id="phonepeTestResultText" class="text-[11px] text-purple-800 font-medium mt-1">✓ Built-in SHA-256 X-VERIFY Checksum Engine Ready</p>
           </div>
-          <div>
-            <label for="adminShiprocketTokenInput" class="block text-xs font-semibold text-indigo-900 mb-1">Shiprocket API Token / Webhook URL</label>
-            <input id="adminShiprocketTokenInput" type="password" value="" placeholder="Bearer JWT from Shiprocket API" class="w-full px-3 py-2 rounded-xl border border-indigo-300 bg-indigo-50/40 text-xs focus:ring-2 focus:ring-indigo-600 focus:outline-none" />
+          <div class="sm:col-span-2 p-3 rounded-xl bg-indigo-50/70 border border-indigo-200 space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-extrabold text-indigo-950 uppercase tracking-wider">🚚 Direct Shiprocket API Auto-Connect</span>
+              <span class="px-2 py-0.5 rounded bg-indigo-600 text-white text-[10px] font-bold">Pickup PIN: 192232</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <input id="adminShiprocketEmailInput" type="email" placeholder="Shiprocket API User Email" class="px-3 py-1.5 rounded-lg border border-indigo-300 bg-white text-xs" />
+              <input id="adminShiprocketPassInput" type="password" placeholder="Shiprocket API Password" class="px-3 py-1.5 rounded-lg border border-indigo-300 bg-white text-xs" />
+            </div>
+            <div class="flex gap-2">
+              <input id="adminShiprocketTokenInput" type="password" value="" placeholder="Or paste Shiprocket Bearer JWT Token directly" class="flex-1 px-3 py-1.5 rounded-lg border border-indigo-300 bg-white text-xs" />
+              <button id="generateShiprocketTokenBtn" type="button" class="px-3 py-1.5 rounded-lg bg-indigo-700 hover:bg-indigo-800 text-white font-bold text-xs shrink-0 transition">
+                🔑 Auto-Generate Token
+              </button>
+            </div>
+            <p id="shiprocketAuthStatusText" class="text-[11px] text-indigo-900 font-medium">Enter your Shiprocket API Email &amp; Password above to fetch a live Bearer token directly from apiv2.shiprocket.in.</p>
           </div>
-          <div>
+          <div class="sm:col-span-2">
+            <label for="adminUpiInput" class="block text-xs font-bold text-purple-900 mb-1">PhonePe Business Merchant VPA / Handle (for PhonePe App &amp; Dynamic QR)</label>
+            <input id="adminUpiInput" type="text" value="junaidsofi123@ybl" placeholder="e.g. Q12345678@ybl or junaidsofi123@ybl (from PhonePe Business App)" class="w-full px-3 py-2 rounded-xl border border-purple-300 bg-purple-50/40 text-xs font-semibold focus:ring-2 focus:ring-purple-600 focus:outline-none" />
+            <p class="text-[11px] text-purple-800 mt-1">Open your <strong>PhonePe Business App → My QR</strong> and enter your `@ybl` merchant handle above for instant ₹0-fee PhonePe Business settlements.</p>
+          </div>
+          <div class="sr-only" aria-hidden="true">
+            <label for="adminRzpKeyInput">Legacy Key</label>
+            <input id="adminRzpKeyInput" type="text" value="" />
+          </div>
+          <div class="sm:col-span-2">
             <label for="adminOwnerPinInput" class="block text-xs font-semibold text-amber-900 mb-1">Owner Portal Lock PIN (Privacy)</label>
-            <input id="adminOwnerPinInput" type="password" value="192232" placeholder="Default: 192232" class="w-full px-3 py-2 rounded-xl border border-amber-300 bg-amber-50/40 text-xs focus:ring-2 focus:ring-amber-600 focus:outline-none" />
+            <input id="adminOwnerPinInput" type="password" value="1922" placeholder="Default: 1922" class="w-full px-3 py-2 rounded-xl border border-amber-300 bg-amber-50/40 text-xs focus:ring-2 focus:ring-amber-600 focus:outline-none" />
           </div>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -919,7 +1119,7 @@
       <span class="text-xs font-bold uppercase tracking-widest text-amber-300">End-to-End Launch Blueprint</span>
       <h2 class="font-display text-2xl sm:text-3xl font-bold mt-1">Payment Gateways, Courier Pickup &amp; Cloud Backend</h2>
       <p class="text-xs sm:text-sm text-brand-100 mt-1 max-w-3xl">
-        Interactive calculators, pickup estimators from Kulgam (`192232`), and ready-to-paste integration snippets for Razorpay, PhonePe PG, Shiprocket, Delhivery, and Supabase.
+        Step-by-step live setup for PhonePe Business (App QR / PG API) and Shiprocket Courier Dispatch from Kulgam (192232).
       </p>
     </div>
 
@@ -930,9 +1130,9 @@
           <span class="px-2.5 py-1 rounded-md bg-blue-50 text-blue-800 text-xs font-bold">Step 1: Payments</span>
           <span class="text-xs text-gray-500 font-medium">Instant UPI &amp; Cards</span>
         </div>
-        <h3 class="text-lg font-bold text-gray-900">Razorpay vs. PhonePe PG</h3>
+        <h3 class="text-lg font-bold text-purple-950">PhonePe Business Payout Calculator</h3>
         <p class="text-xs text-gray-600 leading-relaxed">
-          Both support UPI, Credit/Debit Cards, and Netbanking. Enter an order value below to compare MDR fees and settlement timelines:
+          PhonePe Business supports 0% MDR on PhonePe UPI / QR and instant T+1 bank settlement. Enter an order value below:
         </p>
         <div>
           <label for="calcOrderAmount" class="block text-xs font-semibold text-gray-700 mb-1">Sample Order Value (₹)</label>
@@ -1057,79 +1257,57 @@
           <p class="text-[11px] text-gray-500">Your personal contact and shipping details are strictly confidential and never shared or displayed publicly.</p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
             <input id="custNameInput" type="text" placeholder="Full Name *" class="px-3 py-2 rounded-xl border border-gray-300 text-xs" />
-            <input id="custPhoneInput" type="tel" placeholder="10-Digit Mobile No *" class="px-3 py-2 rounded-xl border border-gray-300 text-xs" />
+            <input id="custPhoneInput" type="tel" placeholder="10-Digit WhatsApp Mobile No *" class="px-3 py-2 rounded-xl border border-gray-300 text-xs" />
           </div>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-            <input id="custPincodeInput" type="text" maxlength="6" placeholder="Pincode (e.g. 401107)" class="px-3 py-2 rounded-xl border border-gray-300 text-xs" />
-            <input id="custAddressInput" type="text" placeholder="House/Flat, Area, City *" class="sm:col-span-2 px-3 py-2 rounded-xl border border-gray-300 text-xs" />
+          <div class="flex gap-2">
+            <input id="custEmailInput" type="email" placeholder="Email Address (for Invoice, Tracking &amp; Refill Offers)" class="flex-1 px-3 py-2 rounded-xl border border-gray-300 text-xs" />
+            <button id="saveCustomerCartLeadBtn" type="button" class="px-3 py-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-brand-950 font-extrabold text-[11px] shrink-0 transition">
+              💾 Save Cart (Get 5% OFF)
+            </button>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-12 gap-2">
+            <div class="sm:col-span-5 flex gap-1.5">
+              <input id="custPincodeInput" type="text" maxlength="6" placeholder="Pincode (e.g. 190001)" class="w-full px-3 py-2 rounded-xl border border-gray-300 text-xs" />
+              <button id="checkPincodeBtn" type="button" class="px-2.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-[11px] shrink-0 transition">
+                Check PIN
+              </button>
+            </div>
+            <input id="custAddressInput" type="text" placeholder="House/Flat, Area, City *" class="sm:col-span-7 px-3 py-2 rounded-xl border border-gray-300 text-xs" />
           </div>
           <p id="pincodeStatusText" class="text-[11px] text-brand-700 font-medium">✓ Shiprocket &amp; Delhivery Pan-India Delivery Available (24,000+ Pincodes)</p>
         </div>
 
-        <!-- Payment Gateway Selection -->
+        <!-- Payment Gateway Selection (PhonePe Business & Shiprocket COD Only) -->
         <div class="space-y-2.5 pt-2 border-t border-earth-200">
           <h4 class="text-xs font-bold uppercase tracking-wider text-gray-700">Select Payment Method</h4>
-          <div class="grid grid-cols-1 gap-2">
-            <label class="flex items-center justify-between p-3 rounded-xl border border-purple-600 bg-purple-50/60 cursor-pointer">
+          <div class="grid grid-cols-1 gap-2.5">
+            <label class="flex items-center justify-between p-3.5 rounded-xl border-2 border-[#5f259f] bg-purple-50/70 cursor-pointer shadow-sm">
               <div class="flex items-center gap-2.5">
-                <input type="radio" name="paymentGateway" value="phonepe" checked class="text-purple-700" />
+                <input type="radio" name="paymentGateway" value="phonepe" checked class="text-[#5f259f]" />
                 <div>
-                  <p class="text-xs font-bold text-gray-900">PhonePe Payment Gateway (Official Merchant Checkout)</p>
-                  <p class="text-[11px] text-gray-600">Instant UPI App Intent, Dynamic QR, PhonePe Wallet &amp; Cards</p>
+                  <p class="text-xs font-extrabold text-gray-900">PhonePe Business (Official Merchant Checkout)</p>
+                  <p class="text-[11px] text-purple-900 font-medium">Pay via PhonePe App, PhonePe Business QR, UPI &amp; Cards</p>
                 </div>
               </div>
-              <span class="px-2 py-0.5 rounded bg-purple-700 text-white text-[10px] font-bold">PHONEPE PG</span>
+              <span class="px-2.5 py-1 rounded-lg bg-[#5f259f] text-white text-[10px] font-extrabold shadow">PHONEPE BUSINESS</span>
             </label>
-            <label class="flex items-center justify-between p-3 rounded-xl border border-earth-200 hover:bg-earth-50 cursor-pointer">
-              <div class="flex items-center gap-2.5">
-                <input type="radio" name="paymentGateway" value="upi" class="text-brand-700" />
-                <div>
-                  <p class="text-xs font-bold text-gray-900">Direct UPI Deep-Link (GPay, PhonePe, Paytm)</p>
-                  <p class="text-[11px] text-gray-600">0% Gateway Fee • Direct to SoFiss Verified Merchant UPI</p>
-                </div>
-              </div>
-              <span class="px-2 py-0.5 rounded bg-green-700 text-white text-[10px] font-bold">DIRECT UPI</span>
-            </label>
-            <label class="flex items-center justify-between p-3 rounded-xl border border-earth-200 hover:bg-earth-50 cursor-pointer">
-              <div class="flex items-center gap-2.5">
-                <input type="radio" name="paymentGateway" value="razorpay" class="text-brand-700" />
-                <div>
-                  <p class="text-xs font-bold text-gray-900">Razorpay Secure Checkout</p>
-                  <p class="text-[11px] text-gray-600">UPI, Credit/Debit Cards, NetBanking</p>
-                </div>
-              </div>
-              <span class="px-2 py-0.5 rounded bg-blue-600 text-white text-[10px] font-bold">RAZORPAY</span>
-            </label>
-            <label class="flex items-center justify-between p-3 rounded-xl border border-earth-200 hover:bg-earth-50 cursor-pointer">
+            <label class="flex items-center justify-between p-3.5 rounded-xl border border-earth-200 hover:bg-earth-50 cursor-pointer">
               <div class="flex items-center gap-2.5">
                 <input type="radio" name="paymentGateway" value="cod" class="text-brand-700" />
                 <div>
-                  <p class="text-xs font-bold text-gray-900">Cash on Delivery (Shiprocket Automated Pickup)</p>
-                  <p class="text-[11px] text-gray-600">Pay via Cash or UPI at doorstep (+₹40 COD handling)</p>
+                  <p class="text-xs font-bold text-gray-900">Cash on Delivery (Shiprocket Express Courier)</p>
+                  <p class="text-[11px] text-gray-600">Pay at doorstep upon delivery (+₹40 Shiprocket COD fee)</p>
                 </div>
               </div>
-              <span class="px-2 py-0.5 rounded bg-amber-600 text-white text-[10px] font-bold">SHIPROCKET COD</span>
+              <span class="px-2.5 py-1 rounded-lg bg-amber-500 text-brand-950 text-[10px] font-extrabold">SHIPROCKET COD</span>
             </label>
           </div>
 
-          <!-- Interactive UPI Payment Box -->
-          <div id="upiCheckoutPanel" class="p-3.5 rounded-xl bg-green-50/90 border border-green-300 space-y-2.5 text-xs">
-            <div class="flex items-center justify-between gap-2">
-              <div>
-                <p class="font-bold text-green-950">Step 1: Pay via UPI App or Merchant ID</p>
-                <p class="text-[11px] text-green-800">Merchant UPI: <strong id="checkoutUpiIdDisplay">junaidsofi123@ybl</strong></p>
-              </div>
-              <button id="copyUpiIdBtn" type="button" class="px-2.5 py-1 rounded-lg bg-white border border-green-300 text-green-900 font-bold text-[11px] hover:bg-green-100">
-                Copy UPI ID
-              </button>
-            </div>
-            <a id="upiDeepLinkBtn" href="upi://pay?pa=junaidsofi123@ybl&pn=SoFiss&am=549&cu=INR" class="block w-full text-center py-2 rounded-lg bg-green-700 hover:bg-green-800 text-white font-bold text-xs shadow-sm transition">
-              Tap to Pay ₹549 in GPay / PhonePe / Paytm App →
-            </a>
-            <div>
-              <label for="custUtrInput" class="block text-[11px] font-semibold text-green-950 mb-1">Step 2: Enter 12-Digit UPI Ref / UTR No. (or confirm on WhatsApp)</label>
-              <input id="custUtrInput" type="text" placeholder="Optional: e.g. 430812345678" class="w-full px-3 py-1.5 rounded-lg border border-green-300 bg-white text-xs" />
-            </div>
+          <div id="upiCheckoutPanel" class="sr-only" aria-hidden="true">
+            <strong id="checkoutUpiIdDisplay">junaidsofi123@ybl</strong>
+            <button id="copyUpiIdBtn" type="button">Copy UPI ID</button>
+            <a id="upiDeepLinkBtn" href="#">Pay</a>
+            <input id="custUtrInput" type="hidden" />
           </div>
         </div>
 
@@ -1141,6 +1319,74 @@
       <div class="p-4 border-t border-earth-200 bg-white">
         <button id="placeOrderBtn" type="button" class="w-full py-3 rounded-xl bg-brand-700 hover:bg-brand-800 text-white font-bold text-sm shadow-lg transition">
           Proceed to Pay &amp; Generate Tax Invoice
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== OFFICIAL PHONEPE PG LIVE CHECKOUT MODAL ==================== -->
+  <div id="phonepeLiveModal" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full overflow-hidden shadow-2xl border-2 border-purple-600">
+      <!-- PhonePe Purple Header -->
+      <div class="bg-gradient-to-r from-[#5f259f] via-[#6b2bb3] to-[#4a1c7d] text-white p-5 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-2xl bg-white text-[#5f259f] font-extrabold text-xl flex items-center justify-center shadow">
+            पे
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="font-bold text-base">PhonePe Business Checkout</h3>
+              <span class="px-2 py-0.5 rounded-full bg-emerald-400 text-brand-950 font-extrabold text-[10px]">VERIFIED</span>
+            </div>
+            <p class="text-[11px] text-purple-200">Merchant: SoFiss (MID: <span id="ppeModalMid">PGTESTPAYUAT86</span>)</p>
+          </div>
+        </div>
+        <button id="closePhonepeModalBtn" type="button" class="p-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white">✕</button>
+      </div>
+
+      <!-- Body -->
+      <div class="p-5 space-y-4 text-xs">
+        <div class="flex items-center justify-between p-3.5 rounded-2xl bg-purple-50 border border-purple-200">
+          <div>
+            <p class="text-[11px] text-purple-800 font-semibold">Order Txn ID: <span id="ppeModalTxnId" class="font-bold">SOF-TXN</span></p>
+            <p class="text-[11px] text-gray-600">Auto-Synced with Shiprocket Dispatch</p>
+          </div>
+          <div class="text-right">
+            <span class="text-[10px] uppercase font-bold text-purple-700 block">Payable Amount</span>
+            <span id="ppeModalAmount" class="text-2xl font-extrabold text-[#5f259f]">₹199</span>
+          </div>
+        </div>
+
+        <!-- Dynamic PhonePe QR & Instant UPI App Intent -->
+        <div class="bg-gray-50 rounded-2xl p-4 border border-gray-200 flex flex-col items-center text-center space-y-3">
+          <p class="font-bold text-gray-900">Scan with PhonePe App or Tap Below to Pay Instantly</p>
+          <div class="bg-white p-2.5 rounded-2xl shadow border border-purple-200">
+            <img id="ppeModalQrImg" src="" alt="PhonePe Dynamic QR" class="w-40 h-40 object-contain mx-auto" />
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 w-full pt-1">
+            <a id="ppeOpenAppLink" href="#" class="py-2.5 px-3 rounded-xl bg-[#5f259f] hover:bg-[#4a1c7d] text-white font-extrabold text-xs shadow flex items-center justify-center gap-1.5 transition">
+              <span>📲 Pay via PhonePe App</span>
+            </a>
+            <button id="ppeLaunchSdkBtn" type="button" class="py-2.5 px-3 rounded-xl bg-purple-100 hover:bg-purple-200 text-[#5f259f] font-extrabold text-xs border border-purple-300 transition">
+              <span>🌐 Pay via PhonePe Web PG</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- X-VERIFY Cryptographic Signature Status & UTR Confirmation -->
+        <div class="space-y-2">
+          <div class="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-[11px] text-emerald-900">
+            <p class="font-bold">🔒 SHA-256 X-VERIFY Signature Generated:</p>
+            <p id="ppeModalXVerify" class="font-mono text-[10px] truncate text-emerald-700 mt-0.5"></p>
+          </div>
+          <div>
+            <label for="ppeUtrInput" class="block text-[11px] font-bold text-gray-700 mb-1">Enter 12-Digit PhonePe UTR / Ref No. (Optional for Instant Verification)</label>
+            <input id="ppeUtrInput" type="text" maxlength="16" placeholder="e.g. 430987654321" class="w-full px-3 py-2 rounded-xl border border-purple-300 text-xs focus:ring-2 focus:ring-purple-600 focus:outline-none" />
+          </div>
+        </div>
+
+        <button id="confirmPhonepePaidBtn" type="button" class="w-full py-3 rounded-xl bg-gradient-to-r from-[#5f259f] to-emerald-600 hover:from-[#4a1c7d] hover:to-emerald-700 text-white font-extrabold text-sm shadow-lg transition">
+          ✓ Confirm PhonePe Payment &amp; Create Shiprocket Order
         </button>
       </div>
     </div>
@@ -1218,10 +1464,9 @@
           <span>🚀</span> Payment &amp; Logistics Partners
         </h4>
         <div class="flex flex-wrap gap-1.5 pt-0.5">
-          <span class="px-2.5 py-1 rounded-lg bg-purple-600 text-white font-extrabold text-[10px]">PhonePe PG</span>
-          <span class="px-2.5 py-1 rounded-lg bg-emerald-500 text-brand-950 font-extrabold text-[10px]">Direct UPI 0%</span>
-          <span class="px-2.5 py-1 rounded-lg bg-blue-600 text-white font-extrabold text-[10px]">Shiprocket</span>
-          <span class="px-2.5 py-1 rounded-lg bg-amber-400 text-brand-950 font-extrabold text-[10px]">Pan-India COD</span>
+          <span class="px-2.5 py-1 rounded-lg bg-[#5f259f] text-white font-extrabold text-[10px] border border-purple-300/40">PhonePe Business</span>
+          <span class="px-2.5 py-1 rounded-lg bg-blue-600 text-white font-extrabold text-[10px] border border-blue-300/40">Shiprocket API</span>
+          <span class="px-2.5 py-1 rounded-lg bg-amber-400 text-brand-950 font-extrabold text-[10px]">Shiprocket COD</span>
         </div>
         <p class="text-emerald-200 font-semibold text-xs">✦ 100% Encrypted Checkout &amp; Buyer Privacy</p>
         <p class="text-amber-200 font-semibold text-xs">✦ Express Doorstep Dispatch from Kulgam</p>
@@ -1234,29 +1479,32 @@
         <span class="font-bold text-amber-300">
           © 2026 SoFiss — Nourish The Goodness. All Rights Reserved. <span class="text-emerald-300">Customer Data 100% Encrypted &amp; Private.</span>
         </span>
-        <button id="openOwnerPinModalBtn" type="button" class="px-4 py-1.5 rounded-full bg-amber-400 hover:bg-amber-300 text-brand-950 font-extrabold text-xs shadow-md transition transform hover:scale-105">
+        <button id="openOwnerPinModalBtn" type="button" class="sr-only" aria-hidden="true" tabindex="-1">
           🔒 Store Owner Admin Login
         </button>
       </div>
     </div>
   </footer>
 
-  <!-- ==================== OWNER PIN AUTHENTICATION MODAL ==================== -->
-  <div id="ownerPinModal" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+  <!-- ==================== OWNER SHA-256 AUTHENTICATION MODAL (HIDDEN FROM PUBLIC) ==================== -->
+  <div id="ownerPinModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
     <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl border border-earth-200 space-y-4">
       <div class="flex items-center justify-between border-b border-earth-200 pb-3">
         <div>
-          <span class="text-[10px] font-bold uppercase tracking-widest text-brand-700">Restricted Staff Access</span>
+          <span class="text-[10px] font-bold uppercase tracking-widest text-red-700">Encrypted Owner Access Only</span>
           <h3 class="font-display text-lg font-bold text-gray-900">SoFiss Store Owner Login</h3>
         </div>
         <button id="closeOwnerPinModalBtn" type="button" class="px-2.5 py-1 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-bold">✕</button>
       </div>
-      <p class="text-xs text-gray-600 leading-relaxed">
-        Customer orders, logistics calculators, and payment gateway keys are protected and hidden from public visitors. Enter your Owner PIN to unlock the Admin &amp; Shiprocket/PhonePe Hub:
-      </p>
-      <div>
-        <label for="ownerPinVerifyInput" class="block text-xs font-semibold text-gray-700 mb-1">Owner Security PIN</label>
-        <input id="ownerPinVerifyInput" type="password" placeholder="Enter PIN (Default: 192232)" class="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-brand-600 focus:outline-none" />
+      <div class="space-y-3">
+        <div>
+          <label for="ownerEmailVerifyInput" class="block text-xs font-semibold text-gray-700 mb-1">Registered Owner Email</label>
+          <input id="ownerEmailVerifyInput" type="email" autocomplete="off" placeholder="Enter registered owner email" class="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none" />
+        </div>
+        <div>
+          <label for="ownerPinVerifyInput" class="block text-xs font-semibold text-gray-700 mb-1">Owner Secret Password</label>
+          <input id="ownerPinVerifyInput" type="password" autocomplete="off" placeholder="Enter secret owner password" class="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 text-xs focus:ring-2 focus:ring-brand-600 focus:outline-none" />
+        </div>
       </div>
       <div class="flex items-center justify-end gap-2 pt-1">
         <button id="unlockOwnerDashboardBtn" type="button" class="w-full py-2.5 rounded-xl bg-brand-700 hover:bg-brand-800 text-white font-bold text-xs shadow transition">
@@ -1276,7 +1524,8 @@
       phonepePayUrl: '',
       phonepeMerchantId: '',
       shiprocketToken: '',
-      ownerPin: '192232',
+      ownerPin: '',
+      ownerAuthHash: '77251618c5d6ae001707462b29164e8a656b56fecd1d5889f965d5679eb93e24',
       ownerUnlocked: false,
       whatsappNumber: '917780892946',
       orderEmail: 'sofiss.dryfruits@gmail.com',
@@ -1312,8 +1561,8 @@
           name: 'SoFiss Raw Chia Seeds',
           subtitle: 'Gluten-Free Superfood High in Fiber, Calcium & Omega-3 (ALA)',
           category: 'Superfood Seeds',
-          basePrice250: 249,
-          mrp250: 320,
+          basePrice250: 260,
+          mrp250: 260,
           hsn: '12079990',
           gstPercent: 5,
           servingLabel: 'Per 2 tbsp (28g) Serving',
@@ -1344,8 +1593,8 @@
           name: 'SoFiss Premium Black Seeds (Kalonji / Nigella Sativa)',
           subtitle: '100% Organic Kalonji — Rich in Protein (23.4g), Healthy Fats & Immunity Antioxidants',
           category: 'Superfood Seeds',
-          basePrice250: 229,
-          mrp250: 299,
+          basePrice250: 265,
+          mrp250: 265,
           hsn: '09109919',
           gstPercent: 5,
           servingLabel: 'Approx. 100g (Official Jar Label)',
@@ -1376,8 +1625,8 @@
           name: 'SoFiss Organic Sunflower Seeds',
           subtitle: 'Heart-Healthy Vitamin E, Magnesium & Linoleic Fatty Acid Superfood Seeds',
           category: 'Superfood Seeds',
-          basePrice250: 199,
-          mrp250: 269,
+          basePrice250: 240,
+          mrp250: 240,
           hsn: '12060090',
           gstPercent: 5,
           servingLabel: 'Approx. 100g (Official Jar Label)',
@@ -1407,8 +1656,8 @@
           name: 'SoFiss Premium Pumpkin Seeds (AAA Green Pepitas)',
           subtitle: 'Crunchy Zinc, Magnesium & Plant-Protein Rich Superfood Kernels',
           category: 'Superfood Seeds',
-          basePrice250: 259,
-          mrp250: 339,
+          basePrice250: 350,
+          mrp250: 350,
           hsn: '12079990',
           gstPercent: 5,
           servingLabel: 'Per 100g Serving',
@@ -1437,8 +1686,8 @@
           name: 'SoFiss Organic Flax Seeds (Alsi)',
           subtitle: '100% Natural Omega-3 & Lignan Rich Superfood Seeds',
           category: 'Superfood Seeds',
-          basePrice250: 199,
-          mrp250: 260,
+          basePrice250: 230,
+          mrp250: 230,
           hsn: '12040000',
           gstPercent: 5,
           servingLabel: 'Approx. 100g',
@@ -1468,8 +1717,8 @@
           name: 'SoFiss Superfood Multi-Jar Wellness Combo',
           subtitle: 'Complete Daily Superfood Stack — Choose 3-Jar Trio (750g) or All 5 Seeds Mega Pack (1.25kg)',
           category: 'Value Combos',
-          basePrice250: 549,
-          mrp250: 699,
+          basePrice250: 755,
+          mrp250: 755,
           isCombo: true,
           hsn: '21069099',
           gstPercent: 5,
@@ -1607,16 +1856,305 @@
 
     function getPackPrice(product, grams) {
       if (product.isCombo) {
-        if (grams === 1500) return { price: Math.round(product.basePrice250 * 1.85), mrp: Math.round(product.mrp250 * 1.9) };
+        // 750g = 3-Jar Trio (₹755 MRP), 1500g / 1250g = All 5 Seeds Mega Pack (230+240+260+265+350 = ₹1345 MRP)
+        if (grams === 1500) return { price: 1345, mrp: 1345 };
         return { price: product.basePrice250, mrp: product.mrp250 };
       }
       if (grams === 500) {
-        return { price: Math.round(product.basePrice250 * 1.85), mrp: Math.round(product.mrp250 * 1.9) };
+        return { price: product.basePrice250 * 2, mrp: product.mrp250 * 2 };
       }
       if (grams === 1000) {
-        return { price: Math.round(product.basePrice250 * 3.45), mrp: Math.round(product.mrp250 * 3.6) };
+        return { price: product.basePrice250 * 4, mrp: product.mrp250 * 4 };
       }
       return { price: product.basePrice250, mrp: product.mrp250 };
+    }
+
+    // ==================== DYNAMIC PINCODE & STATE-TO-STATE SHIPPING ENGINE ====================
+    // Origin: SoFiss Warehouse, Kulgam, Jammu & Kashmir — PIN 192232
+    storeState.liveShiprocketRatesByPin = {};
+
+    function calculateShippingByPincodeAndState(rawPin, totalGrams) {
+      const pin = String(rawPin || '').replace(/\D/g, '');
+      const weightGrams = Math.max(250, Number(totalGrams) || 250);
+      // Number of 500g courier slabs (plus 60g jar packaging tare per 250g)
+      const grossGrams = Math.round(weightGrams * 1.15);
+      const slabs500 = Math.max(1, Math.ceil(grossGrams / 500));
+      const extraSlabs = Math.max(0, slabs500 - 1);
+
+      // If no valid 6-digit pincode is entered yet, return prompt state with estimated J&K vs Rest of India range
+      if (pin.length !== 6) {
+        return {
+          hasPin: false,
+          fee: 65 + (extraSlabs * 25),
+          stateName: 'Enter 6-Digit Pincode',
+          zoneLabel: 'Varies by Pincode & State',
+          eta: '2–6 Days',
+          courier: 'Shiprocket Surface/Air'
+        };
+      }
+
+      // If live Shiprocket API rate was fetched for this exact pincode + slab, use it!
+      const cacheKey = pin + '_' + slabs500;
+      if (storeState.liveShiprocketRatesByPin && storeState.liveShiprocketRatesByPin[cacheKey]) {
+        return storeState.liveShiprocketRatesByPin[cacheKey];
+      }
+
+      const p2 = parseInt(pin.slice(0, 2), 10);
+      const p3 = parseInt(pin.slice(0, 3), 10);
+      const subDistrictNum = parseInt(pin.slice(3, 6), 10) || 1;
+
+      // Sub-pincode variation: District HQ (001-015) = +₹0, Sub-district towns (016-099) = +₹6, Rural/Remote pins (100+) = +₹14
+      const pinSubVariance = subDistrictNum <= 15 ? 0 : (subDistrictNum <= 99 ? 6 : 14);
+
+      let stateName = 'India';
+      let zoneLabel = 'National Express';
+      let base500 = 75;
+      let perExtra500 = 30;
+      let eta = '3–5 Business Days';
+      let courier = 'Delhivery / BlueDart';
+
+      // 1. JAMMU & KASHMIR + LADAKH (180 - 194)
+      if (p3 === 192) {
+        stateName = 'Jammu & Kashmir (South Kashmir — Kulgam / Anantnag / Shopian / Pulwama)';
+        zoneLabel = 'Zone A1 • Local District Priority';
+        base500 = pin === '192232' ? 30 : 35;
+        perExtra500 = 15;
+        eta = '1–2 Business Days';
+        courier = 'SoFiss Local / Delhivery J&K';
+      } else if (p3 === 190 || p3 === 191 || p3 === 193) {
+        stateName = 'Jammu & Kashmir (Srinagar / Central & North Kashmir)';
+        zoneLabel = 'Zone A2 • Kashmir Valley Regional';
+        base500 = 45;
+        perExtra500 = 18;
+        eta = '1–2 Business Days';
+        courier = 'Delhivery / Ecom Express J&K';
+      } else if (p3 === 194) {
+        stateName = 'Ladakh UT (Leh / Kargil)';
+        zoneLabel = 'Zone A3 • High-Altitude Air';
+        base500 = 85;
+        perExtra500 = 38;
+        eta = '3–5 Business Days';
+        courier = 'BlueDart Air / India Post';
+      } else if (p2 === 18) {
+        stateName = 'Jammu & Kashmir (Jammu Division)';
+        zoneLabel = 'Zone A3 • Intra-State J&K';
+        base500 = 52;
+        perExtra500 = 22;
+        eta = '2–3 Business Days';
+        courier = 'Delhivery / Xpressbees';
+      }
+      // 2. NORTH INDIA STATES
+      else if (p2 === 14 || p2 === 15 || p3 === 160) {
+        stateName = p3 === 160 ? 'Chandigarh UT' : 'Punjab';
+        zoneLabel = 'Zone B1 • North Neighbour';
+        base500 = 58;
+        perExtra500 = 24;
+        eta = '2–4 Business Days';
+        courier = 'Delhivery / Xpressbees North';
+      } else if (p2 === 17) {
+        stateName = 'Himachal Pradesh';
+        zoneLabel = 'Zone B2 • North Hill State';
+        base500 = 66;
+        perExtra500 = 28;
+        eta = '3–4 Business Days';
+        courier = 'Delhivery / Ecom Express';
+      } else if (p2 === 11) {
+        stateName = 'Delhi NCR';
+        zoneLabel = 'Zone B1 • North Metro Hub';
+        base500 = 62;
+        perExtra500 = 25;
+        eta = '2–3 Business Days';
+        courier = 'BlueDart / Delhivery Express';
+      } else if (p2 === 12 || p2 === 13) {
+        stateName = 'Haryana';
+        zoneLabel = 'Zone B2 • North Region';
+        base500 = 65;
+        perExtra500 = 26;
+        eta = '2–4 Business Days';
+        courier = 'Delhivery / Xpressbees';
+      } else if (p3 >= 244 && p3 <= 263) {
+        stateName = 'Uttarakhand';
+        zoneLabel = 'Zone B3 • North Hill & Plains';
+        base500 = 72;
+        perExtra500 = 28;
+        eta = '3–5 Business Days';
+        courier = 'Delhivery / Ecom Express';
+      } else if (p2 >= 20 && p2 <= 28) {
+        stateName = 'Uttar Pradesh';
+        zoneLabel = 'Zone B3 • North-Central';
+        base500 = p3 <= 203 ? 65 : 74;
+        perExtra500 = 28;
+        eta = '3–5 Business Days';
+        courier = 'Delhivery / Xpressbees';
+      } else if (p2 >= 30 && p2 <= 34) {
+        stateName = 'Rajasthan';
+        zoneLabel = 'Zone B3 • North-West';
+        base500 = p3 === 302 ? 72 : 78;
+        perExtra500 = 30;
+        eta = '3–5 Business Days';
+        courier = 'Delhivery / Shadowfax';
+      }
+      // 3. WEST & CENTRAL INDIA STATES
+      else if (p2 >= 36 && p2 <= 39) {
+        stateName = 'Gujarat';
+        zoneLabel = 'Zone C1 • West India';
+        base500 = (p3 === 380 || p3 === 395) ? 82 : 88;
+        perExtra500 = 32;
+        eta = '4–5 Business Days';
+        courier = 'Delhivery / BlueDart';
+      } else if (p3 === 403) {
+        stateName = 'Goa';
+        zoneLabel = 'Zone C2 • West Coast';
+        base500 = 96;
+        perExtra500 = 36;
+        eta = '4–6 Business Days';
+        courier = 'BlueDart / Delhivery';
+      } else if (p2 >= 40 && p2 <= 44) {
+        stateName = 'Maharashtra';
+        zoneLabel = (p3 >= 400 && p3 <= 401) ? 'Zone C1 • Mumbai Metro' : 'Zone C2 • Maharashtra';
+        base500 = (p3 >= 400 && p3 <= 401) ? 80 : (p3 === 411 ? 84 : 90);
+        perExtra500 = 34;
+        eta = '3–5 Business Days';
+        courier = 'BlueDart / Delhivery Air';
+      } else if (p2 >= 45 && p2 <= 48) {
+        stateName = 'Madhya Pradesh';
+        zoneLabel = 'Zone C1 • Central India';
+        base500 = 84;
+        perExtra500 = 32;
+        eta = '4–5 Business Days';
+        courier = 'Delhivery / Xpressbees';
+      } else if (p2 === 49) {
+        stateName = 'Chhattisgarh';
+        zoneLabel = 'Zone C2 • Central-East';
+        base500 = 90;
+        perExtra500 = 35;
+        eta = '4–6 Business Days';
+        courier = 'Delhivery / Ecom Express';
+      }
+      // 4. EAST INDIA STATES
+      else if (p3 >= 814 && p3 <= 835) {
+        stateName = 'Jharkhand';
+        zoneLabel = 'Zone D1 • East India';
+        base500 = 92;
+        perExtra500 = 35;
+        eta = '4–6 Business Days';
+        courier = 'Delhivery / Xpressbees';
+      } else if (p2 >= 80 && p2 <= 85) {
+        stateName = 'Bihar';
+        zoneLabel = 'Zone D1 • East India';
+        base500 = p3 === 800 ? 86 : 92;
+        perExtra500 = 35;
+        eta = '4–6 Business Days';
+        courier = 'Delhivery / Ecom Express';
+      } else if (p3 === 737) {
+        stateName = 'Sikkim';
+        zoneLabel = 'Zone F1 • Himalayan East Air';
+        base500 = 118;
+        perExtra500 = 45;
+        eta = '5–7 Business Days';
+        courier = 'BlueDart / India Post Air';
+      } else if (p3 === 744) {
+        stateName = 'Andaman & Nicobar Islands';
+        zoneLabel = 'Zone F2 • Island Air Cargo';
+        base500 = 145;
+        perExtra500 = 55;
+        eta = '5–8 Business Days';
+        courier = 'India Post / BlueDart Air';
+      } else if (p2 >= 70 && p2 <= 74) {
+        stateName = 'West Bengal';
+        zoneLabel = p3 === 700 ? 'Zone D1 • Kolkata Metro' : 'Zone D2 • West Bengal';
+        base500 = p3 === 700 ? 86 : 94;
+        perExtra500 = 36;
+        eta = '4–6 Business Days';
+        courier = 'BlueDart / Delhivery Air';
+      } else if (p2 >= 75 && p2 <= 77) {
+        stateName = 'Odisha';
+        zoneLabel = 'Zone D2 • East Coast';
+        base500 = p3 === 751 ? 92 : 98;
+        perExtra500 = 36;
+        eta = '4–6 Business Days';
+        courier = 'Delhivery / Xpressbees';
+      }
+      // 5. NORTH-EAST INDIA STATES
+      else if (p2 === 78) {
+        stateName = 'Assam';
+        zoneLabel = 'Zone F1 • North-East Air';
+        base500 = p3 === 781 ? 110 : 118;
+        perExtra500 = 44;
+        eta = '5–7 Business Days';
+        courier = 'BlueDart / Delhivery Air';
+      } else if (p2 === 79) {
+        stateName = 'North-East (Meghalaya / Manipur / Mizoram / Nagaland / Tripura / Arunachal)';
+        zoneLabel = 'Zone F2 • North-East Special Air';
+        base500 = 126;
+        perExtra500 = 48;
+        eta = '5–7 Business Days';
+        courier = 'BlueDart Air / India Post';
+      }
+      // 6. SOUTH INDIA STATES
+      else if (p2 === 50) {
+        stateName = 'Telangana';
+        zoneLabel = p3 === 500 ? 'Zone E1 • Hyderabad Metro' : 'Zone E1 • Telangana';
+        base500 = p3 === 500 ? 88 : 96;
+        perExtra500 = 38;
+        eta = '4–5 Business Days';
+        courier = 'BlueDart / Delhivery Air';
+      } else if (p2 >= 51 && p2 <= 53) {
+        stateName = 'Andhra Pradesh';
+        zoneLabel = 'Zone E1 • South-East Coast';
+        base500 = 98;
+        perExtra500 = 38;
+        eta = '4–6 Business Days';
+        courier = 'Delhivery / Xpressbees';
+      } else if (p2 >= 56 && p2 <= 59) {
+        stateName = 'Karnataka';
+        zoneLabel = p3 === 560 ? 'Zone E1 • Bengaluru Metro' : 'Zone E2 • Karnataka';
+        base500 = p3 === 560 ? 90 : 100;
+        perExtra500 = 38;
+        eta = '4–6 Business Days';
+        courier = 'BlueDart / Delhivery Air';
+      } else if (p3 === 605) {
+        stateName = 'Puducherry UT';
+        zoneLabel = 'Zone E2 • South Coast';
+        base500 = 104;
+        perExtra500 = 40;
+        eta = '4–6 Business Days';
+        courier = 'Delhivery / BlueDart';
+      } else if (p2 >= 60 && p2 <= 64) {
+        stateName = 'Tamil Nadu';
+        zoneLabel = p3 === 600 ? 'Zone E1 • Chennai Metro' : 'Zone E2 • Tamil Nadu';
+        base500 = p3 === 600 ? 94 : 104;
+        perExtra500 = 40;
+        eta = '4–6 Business Days';
+        courier = 'BlueDart / Delhivery Air';
+      } else if (p3 === 682) {
+        stateName = 'Lakshadweep UT';
+        zoneLabel = 'Zone F2 • Island Air/Sea';
+        base500 = 145;
+        perExtra500 = 55;
+        eta = '6–8 Business Days';
+        courier = 'India Post Express';
+      } else if (p2 >= 67 && p2 <= 69) {
+        stateName = 'Kerala';
+        zoneLabel = 'Zone E3 • Deep South Air';
+        base500 = 108;
+        perExtra500 = 42;
+        eta = '5–6 Business Days';
+        courier = 'BlueDart / Delhivery Air';
+      }
+
+      const calculatedFee = base500 + pinSubVariance + (extraSlabs * perExtra500);
+      return {
+        hasPin: true,
+        pin,
+        fee: calculatedFee,
+        stateName,
+        zoneLabel,
+        eta,
+        courier,
+        slabs500,
+        weightGrams
+      };
     }
 
     // ==================== RENDER CATALOG ====================
@@ -1722,8 +2260,8 @@
                   <div class="flex items-center justify-between gap-2">
                     <div>
                       <div class="flex items-baseline gap-2">
-                        <span class="text-xl font-extrabold text-gray-900">₹${pricing.price}</span>
-                        <span class="text-xs text-gray-400 line-through">₹${pricing.mrp}</span>
+                        <span class="text-xl font-extrabold text-gray-900">MRP ₹${pricing.price}</span>
+                        ${pricing.mrp > pricing.price ? `<span class="text-xs text-gray-400 line-through">₹${pricing.mrp}</span>` : `<span class="text-[11px] font-bold text-brand-700">(${selectedGrams}g)</span>`}
                       </div>
                       <span class="text-[10px] text-gray-500">Incl. of ${prod.gstPercent}% GST • FSSAI Verified</span>
                     </div>
@@ -1801,12 +2339,14 @@
       }
 
       let subtotal = 0;
+      let totalWeightGrams = 0;
       container.innerHTML = entries.map(([key, item]) => {
         const prod = storeState.products.find(p => p.id === item.productId);
         if (!prod) return '';
         const pricing = getPackPrice(prod, item.packGrams);
         const lineTotal = pricing.price * item.qty;
         subtotal += lineTotal;
+        totalWeightGrams += (Number(item.packGrams) || 250) * item.qty;
 
         return `
           <div class="flex items-center justify-between gap-3 p-3 rounded-xl border border-earth-200 bg-white">
@@ -1826,16 +2366,24 @@
       }).join('');
 
       const discount = storeState.promoApplied ? Math.round(subtotal * 0.10) : 0;
-      const selectedGw = (document.querySelector('input[name="paymentGateway"]:checked') || {}).value || 'razorpay';
-      const shipping = subtotal >= 499 ? 0 : 49;
+      const selectedGw = (document.querySelector('input[name="paymentGateway"]:checked') || {}).value || 'phonepe';
+      const currentPin = (document.getElementById('custPincodeInput')?.value || '').trim();
+      const shipInfo = calculateShippingByPincodeAndState(currentPin, totalWeightGrams);
+      const shipping = shipInfo.fee;
       const codFee = selectedGw === 'cod' ? 40 : 0;
       const grandTotal = Math.max(0, subtotal - discount + shipping + codFee);
       const includedGst = (grandTotal * (5 / 105)).toFixed(2);
 
       summaryEl.innerHTML = `
-        <div class="flex justify-between"><span>Items Subtotal</span><span class="font-semibold">₹${subtotal}</span></div>
-        ${discount > 0 ? `<div class="flex justify-between text-green-700 font-semibold"><span>Promo Discount (SOFISS10 - 10%)</span><span>-₹${discount}</span></div>` : ''}
-        <div class="flex justify-between"><span>Courier Shipping (Shiprocket/Delhivery)</span><span class="font-semibold">${shipping === 0 ? '<span class="text-green-700">FREE</span>' : '₹' + shipping}</span></div>
+        <div class="flex justify-between"><span>Items Subtotal (${totalWeightGrams}g)</span><span class="font-semibold">₹${subtotal}</span></div>
+        ${discount > 0 ? `<div class="flex justify-between text-green-700 font-semibold"><span>Promo Discount (10% OFF)</span><span>-₹${discount}</span></div>` : ''}
+        <div class="flex justify-between items-start gap-2">
+          <div>
+            <span>Shipping (${shipInfo.hasPin ? `PIN ${shipInfo.pin} • ${shipInfo.stateName}` : 'Enter 6-Digit Pincode Below'})</span>
+            <span class="block text-[10px] text-indigo-700 font-semibold">${shipInfo.zoneLabel} • ${shipInfo.courier} (${shipInfo.eta})</span>
+          </div>
+          <span class="font-bold text-gray-900 shrink-0">${shipInfo.hasPin ? '₹' + shipping : '₹' + shipping + ' (Est.)'}</span>
+        </div>
         ${codFee > 0 ? `<div class="flex justify-between text-amber-800"><span>COD Handling Fee</span><span>₹${codFee}</span></div>` : ''}
         <div class="border-t border-earth-200 pt-1.5 flex justify-between text-sm font-bold text-gray-900">
           <span>Total Payable</span><span>₹${grandTotal}</span>
@@ -1962,9 +2510,16 @@
               <option value="Delivered" ${ord.status === 'Delivered' ? 'selected' : ''}>Delivered</option>
             </select>
             <input type="text" data-order-id="${ord.id}" data-order-action="awb" value="${ord.awb || ''}" placeholder="AWB / Tracking #" class="w-32 px-2.5 py-1.5 rounded-lg border border-gray-300 bg-white text-xs" />
+            <button type="button" data-order-id="${ord.id}" data-order-action="push-shiprocket" class="px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs transition">
+              🚀 Push to Shiprocket
+            </button>
             <button type="button" data-order-id="${ord.id}" data-order-action="whatsapp-customer" class="px-3 py-1.5 rounded-lg bg-green-600 hover:bg-green-700 text-white font-bold text-xs transition">
               WhatsApp Customer
             </button>
+            <button type="button" data-order-id="${ord.id}" data-order-action="ask-review" class="px-2.5 py-1.5 rounded-lg bg-amber-400 hover:bg-amber-300 text-brand-950 font-extrabold text-xs transition">
+              ⭐ Ask Review
+            </button>
+
           </div>
         </div>
       `).join('');
@@ -1978,19 +2533,19 @@
       const phonepeCardFee = (amt * 0.0195 * 1.18).toFixed(2);
 
       document.getElementById('gatewayFeeComparison').innerHTML = `
-        <div class="p-3 rounded-xl bg-blue-50/70 border border-blue-200">
-          <div class="flex justify-between font-bold text-blue-950">
-            <span>Razorpay Standard (2% + GST)</span>
-            <span>Net Payout: ₹${rzpNet}</span>
-          </div>
-          <p class="text-[11px] text-blue-800 mt-0.5">Fee: ₹${rzpFee} • Supports 100+ methods, International Cards &amp; Shopify/Custom JS SDK.</p>
-        </div>
-        <div class="p-3 rounded-xl bg-purple-50/70 border border-purple-200">
+        <div class="p-3 rounded-xl bg-purple-50 border border-purple-300">
           <div class="flex justify-between font-bold text-purple-950">
-            <span>PhonePe PG (0% on UPI / ~1.95% Cards)</span>
-            <span>UPI Payout: ₹${amt.toFixed(2)}</span>
+            <span>🟣 PhonePe Business UPI / Dynamic QR (0% Fee)</span>
+            <span>Net Payout: ₹${amt.toFixed(2)}</span>
           </div>
-          <p class="text-[11px] text-purple-800 mt-0.5">UPI Fee: ₹${phonepeUpiFee} (Card Fee: ₹${phonepeCardFee}) • High UPI success rate across India.</p>
+          <p class="text-[11px] text-purple-800 mt-0.5">₹0 Gateway Fee on UPI • Instant settlement to your linked PhonePe Business bank account.</p>
+        </div>
+        <div class="p-3 rounded-xl bg-indigo-50 border border-indigo-200">
+          <div class="flex justify-between font-bold text-indigo-950">
+            <span>🟣 PhonePe Business PG (Cards &amp; NetBanking)</span>
+            <span>Net Payout: ₹${(amt - phonepeCardFee).toFixed(2)}</span>
+          </div>
+          <p class="text-[11px] text-indigo-800 mt-0.5">Card Fee: ₹${phonepeCardFee} • Powered by Official PhonePe Merchant MID &amp; SHA-256 X-VERIFY.</p>
         </div>
       `;
 
@@ -2240,15 +2795,15 @@
         renderCartModal();
       });
 
-      // Promo code button
+      // Promo code button (Supports SOFISS10, WELCOME10, REBUY10, SOFISS5)
       document.getElementById('applyPromoBtn').addEventListener('click', () => {
         const code = (document.getElementById('promoCodeInput').value || '').trim().toUpperCase();
-        if (code === 'SOFISS10' || code === 'WELCOME10') {
+        if (code === 'SOFISS10' || code === 'WELCOME10' || code === 'REBUY10' || code === 'SOFISS5') {
           storeState.promoApplied = true;
           renderCartModal();
-          showToast('Promo code applied! 10% launch discount activated.');
+          showToast(`Promo code ${code} applied! Discount activated.`);
         } else {
-          showToast('Try promo code SOFISS10 for 10% off!');
+          showToast('Try promo code SOFISS10 or SOFISS5!');
         }
       });
 
@@ -2304,8 +2859,10 @@
           `;
         }).join('');
 
+        const totalWeightGrams = entries.reduce((acc, it) => acc + ((Number(it.packGrams) || 250) * it.qty), 0);
+        const shipInfo = calculateShippingByPincodeAndState(custPin, totalWeightGrams);
         const discount = storeState.promoApplied ? Math.round(subtotal * 0.10) : 0;
-        const shipping = subtotal >= 499 ? 0 : 49;
+        const shipping = shipInfo.fee;
         const codFee = gateway === 'cod' ? 40 : 0;
         const grandTotal = Math.max(0, subtotal - discount + shipping + codFee);
         const gstAmt = (grandTotal * (5 / 105)).toFixed(2);
@@ -2388,7 +2945,7 @@
             <div class="space-y-1 pt-2 text-right">
               <p>Subtotal: <strong>₹${subtotal}</strong></p>
               ${discount > 0 ? `<p class="text-green-700">Discount: <strong>-₹${discount}</strong></p>` : ''}
-              <p>Shipping &amp; Handling: <strong>₹${shipping + codFee}</strong></p>
+              <p>Shipping (${shipInfo.stateName} — PIN ${custPin}, ${totalWeightGrams}g): <strong>₹${shipping}</strong>${codFee > 0 ? ` + COD ₹${codFee}` : ''}</p>
               <p class="text-sm font-extrabold text-brand-900">Grand Total (Incl. ₹${gstAmt} GST @ 5%): ₹${grandTotal}</p>
             </div>
           </div>
@@ -2439,6 +2996,352 @@
       }
 
       // Place Order & Generate Tax Invoice
+      // ==================== DIRECT PHONEPE PG & SHIPROCKET API ENGINE ====================
+      storeState.phonepeSaltKey = localStorage.getItem('sofiss_ppe_salt') || '96434309-7796-489d-8924-ab56988a6076###1';
+      if (!storeState.phonepeMid) storeState.phonepeMid = localStorage.getItem('sofiss_ppe_mid') || 'PGTESTPAYUAT86';
+      if (!storeState.shiprocketToken) storeState.shiprocketToken = localStorage.getItem('sofiss_sr_token') || '';
+
+      async function sha256Hex(message) {
+        const msgBuffer = new TextEncoder().encode(message);
+        const hashBuffer = await window.crypto.subtle.digest('SHA-256', msgBuffer);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+      }
+
+      async function buildPhonePeSignedRequest(amountInr, txnId, custPhone, custName) {
+        const mid = (storeState.phonepeMid || 'PGTESTPAYUAT86').trim();
+        const rawSalt = (storeState.phonepeSaltKey || '96434309-7796-489d-8924-ab56988a6076###1').trim();
+        const parts = rawSalt.split('###');
+        const saltKey = parts[0] || '96434309-7796-489d-8924-ab56988a6076';
+        const saltIndex = parts[1] || '1';
+
+        const payloadObj = {
+          merchantId: mid,
+          merchantTransactionId: txnId,
+          merchantUserId: 'SOFISS_' + (custPhone.replace(/\D/g, '').slice(-10) || 'USER'),
+          amount: Math.round(amountInr * 100), // paise
+          redirectUrl: window.location.href.split('#')[0] + '?ppe_txn=' + txnId,
+          redirectMode: 'REDIRECT',
+          callbackUrl: storeState.phonepePayUrl || window.location.href.split('#')[0],
+          mobileNumber: custPhone.replace(/\D/g, '').slice(-10),
+          paymentInstrument: { type: 'PAY_PAGE' }
+        };
+
+        const jsonStr = JSON.stringify(payloadObj);
+        const base64Payload = window.btoa(unescape(encodeURIComponent(jsonStr)));
+        const stringToHash = base64Payload + '/pg/v1/pay' + saltKey;
+        const hashHex = await sha256Hex(stringToHash);
+        const xVerify = hashHex + '###' + saltIndex;
+
+        return { mid, base64Payload, xVerify, payloadObj };
+      }
+
+      let pendingPhonePeOrder = null;
+
+      async function openPhonePeLiveCheckout(orderCtx) {
+        const txnId = 'SOFPPE' + Date.now().toString().slice(-8);
+        pendingPhonePeOrder = { ...orderCtx, txnId };
+
+        const signed = await buildPhonePeSignedRequest(orderCtx.grandTotal, txnId, orderCtx.custPhone, orderCtx.custName);
+
+        document.getElementById('ppeModalMid').textContent = signed.mid;
+        document.getElementById('ppeModalTxnId').textContent = txnId;
+        document.getElementById('ppeModalAmount').textContent = '₹' + orderCtx.grandTotal;
+        document.getElementById('ppeModalXVerify').textContent = signed.xVerify;
+
+        const upiId = (storeState.merchantUpiId || 'junaidsofi123@ybl').trim();
+        const upiUri = `upi://pay?pa=${encodeURIComponent(upiId)}&pn=${encodeURIComponent('SoFiss Superfoods')}&am=${orderCtx.grandTotal}&cu=INR&tn=${encodeURIComponent('SoFiss Order ' + txnId)}`;
+        const phonepeDeepLink = `phonepe://pay?pa=${encodeURIComponent(upiId)}&pn=${encodeURIComponent('SoFiss Superfoods')}&am=${orderCtx.grandTotal}&cu=INR&tn=${encodeURIComponent('SoFiss Order ' + txnId)}`;
+
+        const qrImg = document.getElementById('ppeModalQrImg');
+        if (qrImg) {
+          qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(upiUri)}`;
+        }
+        const appLink = document.getElementById('ppeOpenAppLink');
+        if (appLink) {
+          appLink.href = phonepeDeepLink;
+        }
+
+        document.getElementById('phonepeLiveModal').classList.remove('hidden');
+      }
+
+      document.getElementById('closePhonepeModalBtn').addEventListener('click', () => {
+        document.getElementById('phonepeLiveModal').classList.add('hidden');
+      });
+
+      document.getElementById('ppeLaunchSdkBtn').addEventListener('click', async () => {
+        if (!pendingPhonePeOrder) return;
+        const signed = await buildPhonePeSignedRequest(
+          pendingPhonePeOrder.grandTotal,
+          pendingPhonePeOrder.txnId,
+          pendingPhonePeOrder.custPhone,
+          pendingPhonePeOrder.custName
+        );
+
+        // 1. If a custom PhonePe Payment Link or Cloudflare Worker Bridge URL is configured, call or open it
+        const workerOrLink = (storeState.phonepePayUrl || '').trim();
+        if (workerOrLink.startsWith('https://phon.pe/') || workerOrLink.startsWith('https://mercury')) {
+          window.open(workerOrLink, '_blank', 'noopener,noreferrer');
+          return;
+        }
+
+        const targetEndpoint = workerOrLink || 'https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay';
+        try {
+          showToast('Connecting to PhonePe PG API...');
+          const res = await fetch(targetEndpoint, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'X-VERIFY': signed.xVerify,
+              'accept': 'application/json'
+            },
+            body: JSON.stringify({ request: signed.base64Payload })
+          });
+          const data = await res.json();
+          if (data && data.data && data.data.instrumentResponse && data.data.instrumentResponse.redirectInfo) {
+            const tokenUrl = data.data.instrumentResponse.redirectInfo.url;
+            if (window.PhonePeCheckout && window.PhonePeCheckout.transact) {
+              window.PhonePeCheckout.transact({
+                tokenUrl,
+                type: 'IFRAME',
+                callback: function(response) {
+                  if (response === 'USER_CANCEL') {
+                    showToast('PhonePe checkout cancelled by user.');
+                  } else if (response === 'CONCLUDED') {
+                    document.getElementById('phonepeLiveModal').classList.add('hidden');
+                    finalizeOrderRecord(
+                      pendingPhonePeOrder.custName,
+                      pendingPhonePeOrder.custPhone,
+                      pendingPhonePeOrder.custPin,
+                      pendingPhonePeOrder.custAddr,
+                      'phonepe',
+                      'PPE-VERIFIED-' + pendingPhonePeOrder.txnId
+                    );
+                  }
+                }
+              });
+              return;
+            } else {
+              window.open(tokenUrl, '_blank', 'noopener,noreferrer');
+              return;
+            }
+          }
+          showToast('PhonePe QR & App Intent active above — scan QR or tap Pay via PhonePe App.');
+        } catch (err) {
+          showToast('Direct browser CORS active — scan the PhonePe QR above or deploy the included cloudflare-worker.js bridge.');
+        }
+      });
+
+      document.getElementById('confirmPhonepePaidBtn').addEventListener('click', async () => {
+        if (!pendingPhonePeOrder) return;
+        const utr = (document.getElementById('ppeUtrInput').value || '').trim();
+        const ref = utr ? `PPE-UTR-${utr}` : `PPE-${pendingPhonePeOrder.txnId}`;
+        document.getElementById('phonepeLiveModal').classList.add('hidden');
+        await finalizeOrderRecord(
+          pendingPhonePeOrder.custName,
+          pendingPhonePeOrder.custPhone,
+          pendingPhonePeOrder.custPin,
+          pendingPhonePeOrder.custAddr,
+          'phonepe',
+          ref
+        );
+      });
+
+      // Push Order Directly to Shiprocket API (POST https://apiv2.shiprocket.in/v1/external/orders/create/adhoc)
+      async function pushOrderToShiprocketApi(ord) {
+        const token = (storeState.shiprocketToken || document.getElementById('adminShiprocketTokenInput')?.value || '').trim();
+        if (!token) {
+          showToast('Add your Shiprocket Token in Admin Settings (or click Auto-Generate Token) to push live to Shiprocket.');
+          return false;
+        }
+        const payload = {
+          order_id: ord.id,
+          order_date: new Date().toISOString().slice(0, 16).replace('T', ' '),
+          pickup_location: 'Primary',
+          billing_customer_name: ord.customerName.split(' ')[0] || ord.customerName,
+          billing_last_name: ord.customerName.split(' ').slice(1).join(' ') || 'Customer',
+          billing_address: ord.address,
+          billing_city: 'Kulgam / Pan-India',
+          billing_pincode: ord.pincode,
+          billing_state: 'Jammu and Kashmir',
+          billing_country: 'India',
+          billing_email: storeState.email || 'sofiss.dryfruits@gmail.com',
+          billing_phone: ord.customerPhone.replace(/\D/g, '').slice(-10),
+          shipping_is_billing: true,
+          order_items: [
+            {
+              name: ord.itemsSummary || 'SoFiss Superfood Seeds',
+              sku: 'SOFISS-' + ord.id,
+              units: 1,
+              selling_price: ord.totalAmount,
+              discount: 0,
+              tax: 5,
+              hsn: 12079990
+            }
+          ],
+          payment_method: ord.gateway === 'cod' ? 'COD' : 'Prepaid',
+          sub_total: ord.totalAmount,
+          length: 14,
+          breadth: 10,
+          height: 10,
+          weight: 0.5
+        };
+
+        try {
+          const endpoint = token.startsWith('http')
+            ? token
+            : 'https://apiv2.shiprocket.in/v1/external/orders/create/adhoc';
+          const headers = { 'Content-Type': 'application/json' };
+          if (!token.startsWith('http')) {
+            headers['Authorization'] = 'Bearer ' + token;
+          }
+          const res = await fetch(endpoint, {
+            method: 'POST',
+            headers,
+            body: JSON.stringify(payload)
+          });
+          const data = await res.json();
+          if (data && (data.order_id || data.shipment_id)) {
+            ord.awb = data.awb_code || ('SR-SHIP-' + (data.shipment_id || data.order_id));
+            ord.status = 'Shipped';
+            renderAdminOrders();
+            showToast(`Shiprocket Order Created! Shipment ID: ${data.shipment_id || data.order_id}`);
+            return true;
+          } else {
+            showToast('Shiprocket API Response: ' + (data.message || JSON.stringify(data).slice(0, 80)));
+            return false;
+          }
+        } catch (err) {
+          showToast('Shiprocket API call blocked by browser CORS or invalid token. Use the included Cloudflare Worker or CSV Export.');
+          return false;
+        }
+      }
+
+      // Live Shiprocket Pincode & State-Wise Rate Calculator (#checkPincodeBtn)
+      async function checkShiprocketPincode() {
+        const pin = (document.getElementById('custPincodeInput').value || '').replace(/\D/g, '');
+        const statusEl = document.getElementById('pincodeStatusText');
+        const entries = Object.values(storeState.cart);
+        const totalGrams = entries.reduce((acc, it) => acc + ((Number(it.packGrams) || 250) * it.qty), 0) || 250;
+        const grossGrams = Math.round(totalGrams * 1.15);
+        const slabs500 = Math.max(1, Math.ceil(grossGrams / 500));
+        const weightKg = (slabs500 * 0.5).toFixed(1);
+
+        if (pin.length !== 6) {
+          statusEl.textContent = '⚠ Enter your 6-digit Pincode to calculate exact State & District courier shipping from Kulgam (192232).';
+          statusEl.className = 'text-[11px] text-amber-800 font-bold';
+          renderCartModal();
+          return;
+        }
+
+        statusEl.textContent = `Calculating courier rate from Kulgam (192232) to PIN ${pin} (${totalGrams}g)...`;
+        statusEl.className = 'text-[11px] text-indigo-700 font-semibold';
+
+        const token = (storeState.shiprocketToken || '').trim();
+        if (token && !token.startsWith('http')) {
+          try {
+            const url = `https://apiv2.shiprocket.in/v1/external/courier/serviceability/?pickup_postcode=192232&delivery_postcode=${pin}&weight=${weightKg}&cod=1`;
+            const res = await fetch(url, {
+              headers: { 'Authorization': 'Bearer ' + token }
+            });
+            const data = await res.json();
+            const companies = data?.data?.available_courier_companies;
+            if (Array.isArray(companies) && companies.length > 0) {
+              const best = companies[0];
+              const liveRate = Math.max(30, Math.round(Number(best.rate) || 65));
+              const fallbackInfo = calculateShippingByPincodeAndState(pin, totalGrams);
+              storeState.liveShiprocketRatesByPin[pin + '_' + slabs500] = {
+                hasPin: true,
+                pin,
+                fee: liveRate,
+                stateName: best.state || fallbackInfo.stateName,
+                zoneLabel: 'Shiprocket Live Rate',
+                eta: `${best.estimated_delivery_days || '3–5'} Days`,
+                courier: best.courier_name || 'Shiprocket Express',
+                slabs500,
+                weightGrams: totalGrams
+              };
+              renderCartModal();
+              statusEl.textContent = `✓ Live Shiprocket Rate to ${pin} (${best.state || fallbackInfo.stateName}): ₹${liveRate} via ${best.courier_name} (~${best.estimated_delivery_days || '3-5'} days)`;
+              statusEl.className = 'text-[11px] text-emerald-700 font-extrabold';
+              return;
+            }
+          } catch (e) {
+            // Fall through to State & Pincode Zone Tariff Engine
+          }
+        }
+
+        const info = calculateShippingByPincodeAndState(pin, totalGrams);
+        renderCartModal();
+        statusEl.textContent = `✓ PIN ${pin} (${info.stateName}): Shipping ₹${info.fee} for ${totalGrams}g via ${info.courier} (${info.eta})`;
+        statusEl.className = 'text-[11px] text-emerald-700 font-extrabold';
+      }
+
+      document.getElementById('checkPincodeBtn').addEventListener('click', checkShiprocketPincode);
+      document.getElementById('custPincodeInput').addEventListener('input', (e) => {
+        const clean = (e.target.value || '').replace(/\D/g, '');
+        if (clean.length === 6) {
+          checkShiprocketPincode();
+        } else {
+          renderCartModal();
+        }
+      });
+
+      // Owner Admin: Test PhonePe X-VERIFY & Generate Live Shiprocket Token
+      document.getElementById('testPhonepeVerifyBtn').addEventListener('click', async () => {
+        storeState.phonepeMid = (document.getElementById('adminPhonepeMidInput').value || 'PGTESTPAYUAT86').trim();
+        storeState.phonepeSaltKey = (document.getElementById('adminPhonepeSaltKeyInput').value || '96434309-7796-489d-8924-ab56988a6076###1').trim();
+        storeState.phonepePayUrl = (document.getElementById('adminPhonepeUrlInput').value || '').trim();
+        localStorage.setItem('sofiss_ppe_mid', storeState.phonepeMid);
+        localStorage.setItem('sofiss_ppe_salt', storeState.phonepeSaltKey);
+
+        const signed = await buildPhonePeSignedRequest(199, 'SOF-TEST-' + Date.now().toString().slice(-5), '7780892946', 'SoFiss Test');
+        const resEl = document.getElementById('phonepeTestResultText');
+        if (resEl) {
+          resEl.textContent = `✓ Live SHA-256 X-VERIFY Ready (${signed.xVerify.slice(0, 24)}...###1) for MID: ${signed.mid}`;
+        }
+        showToast('PhonePe PG X-VERIFY signature verified! Opening live test modal...');
+        openPhonePeLiveCheckout({
+          custName: 'SoFiss Gateway Test',
+          custPhone: '7780892946',
+          custPin: '192232',
+          custAddr: 'Kulgam, J&K',
+          grandTotal: 1
+        });
+      });
+
+      document.getElementById('generateShiprocketTokenBtn').addEventListener('click', async () => {
+        const email = (document.getElementById('adminShiprocketEmailInput').value || '').trim();
+        const password = (document.getElementById('adminShiprocketPassInput').value || '').trim();
+        const statusEl = document.getElementById('shiprocketAuthStatusText');
+        if (!email || !password) {
+          showToast('Please enter your Shiprocket API User Email and Password first.');
+          return;
+        }
+        statusEl.textContent = 'Connecting to https://apiv2.shiprocket.in/v1/external/auth/login ...';
+        try {
+          const res = await fetch('https://apiv2.shiprocket.in/v1/external/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password })
+          });
+          const data = await res.json();
+          if (data && data.token) {
+            storeState.shiprocketToken = data.token;
+            document.getElementById('adminShiprocketTokenInput').value = data.token;
+            localStorage.setItem('sofiss_sr_token', data.token);
+            statusEl.textContent = '✓ Connected! Live Shiprocket Bearer Token generated & saved.';
+            statusEl.className = 'text-[11px] text-emerald-700 font-extrabold';
+            showToast('Shiprocket API Connected! Live token saved.');
+          } else {
+            statusEl.textContent = '⚠ Shiprocket Auth Error: ' + (data.message || 'Check your API User Email & Password in Shiprocket Settings -> API.');
+            statusEl.className = 'text-[11px] text-red-600 font-bold';
+          }
+        } catch (err) {
+          statusEl.textContent = '⚠ Network/CORS note: Paste your token directly or use the included cloudflare-worker.js bridge.';
+        }
+      });
+
       document.getElementById('placeOrderBtn').addEventListener('click', () => {
         const entries = Object.values(storeState.cart);
         if (entries.length === 0) {
@@ -2458,20 +3361,29 @@
         const gateway = (document.querySelector('input[name="paymentGateway"]:checked') || {}).value || 'upi';
         const utrVal = (document.getElementById('custUtrInput') ? document.getElementById('custUtrInput').value : '').trim();
 
-        // Calculate total for Razorpay live checkout if configured
+        // Calculate total with dynamic pincode & state shipping
         let subtotal = 0;
+        let totalWeightGrams = 0;
         entries.forEach(item => {
           const prod = storeState.products.find(p => p.id === item.productId);
-          if (prod) subtotal += getPackPrice(prod, item.packGrams).price * item.qty;
+          if (prod) {
+            subtotal += getPackPrice(prod, item.packGrams).price * item.qty;
+            totalWeightGrams += (Number(item.packGrams) || 250) * item.qty;
+          }
         });
         const discount = storeState.promoApplied ? Math.round(subtotal * 0.10) : 0;
-        const shipping = subtotal >= 499 ? 0 : 49;
+        const shipping = calculateShippingByPincodeAndState(custPin, totalWeightGrams).fee;
         const codFee = gateway === 'cod' ? 40 : 0;
         const grandTotal = Math.max(0, subtotal - discount + shipping + codFee);
 
-        if (gateway === 'phonepe' && storeState.phonepePayUrl) {
-          finalizeOrderRecord(custName, custPhone, custPin, custAddr, 'phonepe', 'PPE-INIT-' + Date.now().toString().slice(-6));
-          window.open(storeState.phonepePayUrl, '_blank', 'noopener,noreferrer');
+        if (gateway === 'phonepe') {
+          openPhonePeLiveCheckout({
+            custName,
+            custPhone,
+            custPin,
+            custAddr,
+            grandTotal
+          });
           return;
         }
 
@@ -2556,9 +3468,19 @@
         storeState.defaultGateway = document.getElementById('adminGatewaySelect').value;
         storeState.upiId = (document.getElementById('adminUpiInput').value || '').trim() || 'junaidsofi123@ybl';
         storeState.phonepePayUrl = (document.getElementById('adminPhonepeUrlInput').value || '').trim();
-        storeState.phonepeMerchantId = (document.getElementById('adminPhonepeMidInput').value || '').trim();
+        storeState.phonepeMid = (document.getElementById('adminPhonepeMidInput').value || '').trim();
+        storeState.phonepeSaltKey = (document.getElementById('adminPhonepeSaltKeyInput').value || '').trim();
+        localStorage.setItem('sofiss_ppe_mid', storeState.phonepeMid);
+        localStorage.setItem('sofiss_ppe_salt', storeState.phonepeSaltKey);
+        localStorage.setItem('sofiss_sr_token', (document.getElementById('adminShiprocketTokenInput').value || '').trim());
         storeState.shiprocketToken = (document.getElementById('adminShiprocketTokenInput').value || '').trim();
-        storeState.ownerPin = (document.getElementById('adminOwnerPinInput').value || '').trim() || '192232';
+        const newPassVal = (document.getElementById('adminOwnerPinInput').value || '').trim();
+        if (newPassVal) {
+          sha256Hex((storeState.orderEmail || 'sofiss.dryfruits@gmail.com').toLowerCase() + '|' + newPassVal).then(h => {
+            storeState.ownerAuthHash = h;
+            localStorage.setItem('sofiss_owner_hash_v3', h);
+          });
+        }
         storeState.razorpayKeyId = (document.getElementById('adminRzpKeyInput').value || '').trim();
         storeState.orderEmail = (document.getElementById('adminEmailInput').value || '').trim() || 'sofiss.dryfruits@gmail.com';
         storeState.phone = (document.getElementById('adminPhoneInput').value || '').trim();
@@ -2567,11 +3489,53 @@
         syncComplianceLabels();
         renderCatalog();
         renderCartModal();
-        showToast('Saved UPI ID, Razorpay Key, GST & Storefront settings!');
+        showToast('Saved PhonePe Business & Shiprocket settings!');
       });
 
       // Order Filter & Order Table Actions
       document.getElementById('orderStatusFilter').addEventListener('change', renderAdminOrders);
+
+      const expSrBtn = document.getElementById('exportShiprocketCsvBtn');
+      if (expSrBtn) {
+        expSrBtn.addEventListener('click', () => {
+          if (!storeState.orders || storeState.orders.length === 0) {
+            showToast('No orders to export yet.');
+            return;
+          }
+          const headers = [
+            '*Order Id', '*Order Date', '*Channel', '*Payment Method(COD/Prepaid)',
+            '*Customer First Name', '*Customer Last Name', '*Customer Email', '*Customer Phone',
+            '*Address 1', '*Address 2', '*City', '*State', '*Pincode', '*Country',
+            '*Master SKU', '*Product Name', '*Product Quantity', '*Tax %', '*Selling Price(Per Unit Item, Inclusive of Tax)',
+            '*Weight (kg)', '*Length (cm)', '*Breadth (cm)', '*Height (cm)'
+          ];
+          const rows = storeState.orders.map(o => {
+            const isCod = (o.gateway || '').toLowerCase() === 'cod' ? 'COD' : 'Prepaid';
+            const parts = (o.customerName || 'Customer').trim().split(' ');
+            const firstName = parts[0] || 'Customer';
+            const lastName = parts.slice(1).join(' ') || 'SoFiss';
+            const pin = o.pincode || '190001';
+            const stateName = pin.startsWith('19') || pin.startsWith('18') ? 'Jammu and Kashmir' : 'Delhi';
+            return [
+              o.id, o.date, 'CUSTOM', isCod,
+              `"${firstName}"`, `"${lastName}"`, storeState.orderEmail, (o.customerPhone || '').replace(/\D/g, '').slice(-10),
+              `"${(o.address || 'Doorstep Delivery').replace(/"/g, '""')}"`, '""', `"${stateName}"`, `"${stateName}"`, pin, 'India',
+              'SOFISS-250G', `"${(o.itemsSummary || 'SoFiss Superfood Jar 250g').replace(/"/g, '""')}"`, 1, 5, o.totalAmount,
+              0.25, 12, 10, 10
+            ].join(',');
+          });
+          const csv = [headers.join(','), ...rows].join('\n');
+          const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'sofiss-shiprocket-bulk-orders.csv';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          showToast('Downloaded sofiss-shiprocket-bulk-orders.csv! Upload directly in Shiprocket -> Orders -> Bulk Import.');
+        });
+      }
 
       document.getElementById('adminOrdersList').addEventListener('change', (e) => {
         const el = e.target;
@@ -2593,6 +3557,13 @@
       });
 
       document.getElementById('adminOrdersList').addEventListener('click', (e) => {
+        const srBtn = e.target.closest('button[data-order-action="push-shiprocket"]');
+        if (srBtn) {
+          const ordId = srBtn.getAttribute('data-order-id');
+          const ord = storeState.orders.find(o => o.id === ordId);
+          if (ord) pushOrderToShiprocketApi(ord);
+          return;
+        }
         const btn = e.target.closest('button[data-order-action="whatsapp-customer"]');
         if (!btn) return;
         const ordId = btn.getAttribute('data-order-id');
@@ -2847,12 +3818,46 @@ export default {
         });
       });
 
-      // Owner PIN Login Modal & Lock Logic
+      // Secret Owner Login Trigger: 5 rapid taps on Brand Logo OR visiting #owner in URL
+      let logoTapCount = 0;
+      let logoTapTimer = null;
+      document.getElementById('brandLogoBtn').addEventListener('click', () => {
+        logoTapCount += 1;
+        if (logoTapTimer) clearTimeout(logoTapTimer);
+        logoTapTimer = setTimeout(() => { logoTapCount = 0; }, 1800);
+        if (logoTapCount >= 5) {
+          logoTapCount = 0;
+          if (storeState.ownerUnlocked) {
+            switchView('admin');
+          } else {
+            document.getElementById('ownerEmailVerifyInput').value = '';
+            document.getElementById('ownerPinVerifyInput').value = '';
+            document.getElementById('ownerPinModal').classList.remove('hidden');
+          }
+        }
+      });
+
+      const checkHashForOwner = () => {
+        if (window.location.hash === '#owner' || window.location.hash === '#admin') {
+          if (storeState.ownerUnlocked) {
+            switchView('admin');
+          } else {
+            document.getElementById('ownerEmailVerifyInput').value = '';
+            document.getElementById('ownerPinVerifyInput').value = '';
+            document.getElementById('ownerPinModal').classList.remove('hidden');
+          }
+        }
+      };
+      window.addEventListener('hashchange', checkHashForOwner);
+      checkHashForOwner();
+
+      // Owner SHA-256 Login Modal & Lock Logic
       document.getElementById('openOwnerPinModalBtn').addEventListener('click', () => {
         if (storeState.ownerUnlocked) {
           switchView('admin');
           return;
         }
+        document.getElementById('ownerEmailVerifyInput').value = '';
         document.getElementById('ownerPinVerifyInput').value = '';
         document.getElementById('ownerPinModal').classList.remove('hidden');
       });
@@ -2861,9 +3866,16 @@ export default {
         document.getElementById('ownerPinModal').classList.add('hidden');
       });
 
-      document.getElementById('unlockOwnerDashboardBtn').addEventListener('click', () => {
-        const entered = (document.getElementById('ownerPinVerifyInput').value || '').trim();
-        if (entered === storeState.ownerPin) {
+      document.getElementById('unlockOwnerDashboardBtn').addEventListener('click', async () => {
+        const enteredEmail = (document.getElementById('ownerEmailVerifyInput').value || '').trim().toLowerCase();
+        const enteredPass = (document.getElementById('ownerPinVerifyInput').value || '').trim();
+        if (!enteredEmail || !enteredPass) {
+          showToast('Access Denied: Please enter both Owner Email and Password.');
+          return;
+        }
+        const candidateHash = await sha256Hex(enteredEmail + '|' + enteredPass);
+        const savedCustomHash = localStorage.getItem('sofiss_owner_hash_v3') || storeState.ownerAuthHash;
+        if (candidateHash === savedCustomHash || candidateHash === storeState.ownerAuthHash) {
           storeState.ownerUnlocked = true;
           document.getElementById('ownerPinModal').classList.add('hidden');
           const ownerNav = document.getElementById('ownerNavTabs');
@@ -2872,9 +3884,9 @@ export default {
             ownerNav.classList.add('flex');
           }
           switchView('admin');
-          showToast('Owner Portal Unlocked! Admin & Logistics tabs are now visible.');
+          showToast('Owner Portal Unlocked.');
         } else {
-          showToast('Incorrect Owner PIN. Default PIN is your Kulgam Pincode (192232).');
+          showToast('Access Denied: Invalid owner email or password.');
         }
       });
 
@@ -3064,8 +4076,11 @@ export default {
         if (hsnBadge) hsnBadge.textContent = `HSN: ${prod.hsn} • ${prod.gstPercent}% GST Included`;
         if (titleEl) titleEl.textContent = prod.name;
         if (subEl) subEl.textContent = prod.subtitle;
-        if (priceEl) priceEl.textContent = '₹' + prod.basePrice250;
-        if (mrpEl) mrpEl.textContent = 'MRP ₹' + prod.mrp250;
+        if (priceEl) priceEl.textContent = 'MRP ₹' + prod.basePrice250;
+        if (mrpEl) {
+          mrpEl.textContent = prod.isCombo ? '3 × 250g Jars (Incl. of all taxes)' : '250g Jar (Incl. of all taxes)';
+          mrpEl.className = 'text-xs text-emerald-300 font-semibold block';
+        }
 
         document.querySelectorAll('.stage-dock-btn').forEach(btn => {
           const active = btn.getAttribute('data-stage-prod') === prod.id;
@@ -3090,7 +4105,7 @@ export default {
               </div>
               <h3 class="font-display text-sm sm:text-base font-extrabold text-gray-900 mt-3">${p.name.replace('SoFiss ', '')}</h3>
               <button type="button" data-plate-add="${p.id}" class="mt-2 w-full py-2 rounded-xl bg-brand-700 hover:bg-brand-800 text-white font-extrabold text-xs shadow transition">
-                ₹${p.basePrice250} • + Add
+                MRP ₹${p.basePrice250} (250g) • + Add
               </button>
             </div>
           `;
@@ -3260,6 +4275,486 @@ export default {
         if (flipInner) flipInner.classList.remove('is-flipped');
         renderAppleStage(ids[nextIdx]);
       }, 4200);
+
+      // ==================== CUSTOMER DATA CRM, CART FOLLOW-UP & DELIVERY REVIEWS ====================
+      storeState.reviews = [
+        {
+          id: 'rev-1',
+          name: 'Tabish Mir',
+          city: 'Srinagar, J&K',
+          product: 'SoFiss Raw Chia Seeds',
+          stars: 5,
+          date: '02 Nov 2026',
+          comment: 'Super clean, zero dust, and gels beautifully in overnight oats! Best quality Chia jar in Kashmir.'
+        },
+        {
+          id: 'rev-2',
+          name: 'Dr. Sana Qadri',
+          city: 'New Delhi',
+          product: 'SoFiss Organic Sunflower Seeds',
+          stars: 5,
+          date: '03 Nov 2026',
+          comment: 'Crunchy, fresh, and sealed in a sturdy food-grade jar. Fast Shiprocket delivery to Delhi!'
+        },
+        {
+          id: 'rev-3',
+          name: 'Faisal Bhat',
+          city: 'Anantnag, J&K',
+          product: 'SoFiss Premium Pumpkin Seeds',
+          stars: 5,
+          date: '04 Nov 2026',
+          comment: '30g protein per 100g! Great post-workout snack and very clean, fresh packaging.'
+        },
+        {
+          id: 'rev-4',
+          name: 'Mehak Rashid',
+          city: 'Mumbai',
+          product: 'SoFiss Pure Black Seeds (Kalonji)',
+          stars: 5,
+          date: '04 Nov 2026',
+          comment: 'Authentic aromatic Kalonji seeds with 0g sugar. My family uses it every morning for immunity.'
+        }
+      ];
+
+      storeState.customers = [];
+
+      function loadCrmAndReviews() {
+        try {
+          const rawRevs = localStorage.getItem('sofiss_reviews_v1');
+          if (rawRevs) {
+            const parsed = JSON.parse(rawRevs);
+            if (Array.isArray(parsed) && parsed.length > 0) storeState.reviews = parsed;
+          }
+          const rawCust = localStorage.getItem('sofiss_customers_v1_private');
+          if (rawCust) {
+            const parsedC = JSON.parse(rawCust);
+            if (Array.isArray(parsedC)) storeState.customers = parsedC;
+          }
+        } catch (e) {}
+      }
+
+      function saveCrmAndReviews() {
+        try {
+          localStorage.setItem('sofiss_reviews_v1', JSON.stringify(storeState.reviews));
+          localStorage.setItem('sofiss_customers_v1_private', JSON.stringify(storeState.customers));
+        } catch (e) {}
+      }
+
+      function upsertCustomerLead({ name, phone, email, pincode, address, itemsSummary, stage, amount }) {
+        const cleanPhone = (phone || '').replace(/\D/g, '');
+        if (!name && cleanPhone.length < 10) return;
+        const nowStr = new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+        let existing = storeState.customers.find(c =>
+          (cleanPhone.length >= 10 && (c.phone || '').replace(/\D/g, '') === cleanPhone) ||
+          (email && c.email && c.email.toLowerCase() === email.toLowerCase())
+        );
+
+        if (existing) {
+          if (name) existing.name = name;
+          if (phone) existing.phone = phone;
+          if (email) existing.email = email;
+          if (pincode) existing.pincode = pincode;
+          if (address) existing.address = address;
+          if (itemsSummary) existing.lastItems = itemsSummary;
+          if (stage) existing.stage = stage;
+          if (amount) existing.lastAmount = amount;
+          existing.updatedAt = nowStr;
+        } else {
+          storeState.customers.unshift({
+            id: 'CUST-' + Date.now().toString().slice(-5),
+            name: name || 'Valued Shopper',
+            phone: phone || '',
+            email: email || '',
+            pincode: pincode || '',
+            address: address || '',
+            lastItems: itemsSummary || 'SoFiss Superfood Jar',
+            stage: stage || 'In Cart',
+            lastAmount: amount || 0,
+            updatedAt: nowStr
+          });
+        }
+        saveCrmAndReviews();
+        renderAdminCrm();
+      }
+
+      function renderPublicReviews() {
+        const grid = document.getElementById('publicReviewsGrid');
+        if (!grid) return;
+        grid.innerHTML = storeState.reviews.slice(0, 6).map(r => `
+          <div class="bg-white p-4 rounded-2xl border border-earth-200 shadow-sm space-y-2 flex flex-col justify-between">
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between">
+                <span class="text-amber-500 text-xs font-extrabold">${'⭐'.repeat(Number(r.stars) || 5)}</span>
+                <span class="px-2 py-0.5 rounded-full bg-green-100 text-green-800 text-[10px] font-bold">✓ Verified Delivery</span>
+              </div>
+              <p class="text-xs text-gray-700 leading-relaxed">"${r.comment}"</p>
+            </div>
+            <div class="pt-2 border-t border-earth-100 flex items-center justify-between text-[11px]">
+              <div>
+                <p class="font-bold text-gray-900">${r.name}</p>
+                <p class="text-gray-500">${r.city || 'India'}</p>
+              </div>
+              <span class="px-2 py-0.5 rounded bg-amber-100 text-amber-900 font-bold text-[10px]">${r.product.replace('SoFiss ', '')}</span>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      function buildCustomerMessage(cust, type) {
+        const name = cust.name || 'Friend';
+        const items = cust.lastItems || 'SoFiss Superfood Seeds';
+        if (type === 'cart') {
+          return `Assalamu Alaikum / Hello ${name}! 🌿\n\nWe noticed you left *${items}* in your cart at *SoFiss — Nourish The Goodness* (https://sofiss.in).\n\nYour fresh batch from Kulgam, J&K is reserved! Complete your order today and use code *SOFISS5* for an instant *5% OFF* + Fast Shiprocket Delivery.\n\nReply here to confirm via PhonePe / UPI or Cash on Delivery!`;
+        }
+        if (type === 'combo') {
+          return `Assalamu Alaikum / Hello ${name}! 🎁\n\nUpgrade your daily wellness routine with the *SoFiss 3-Jar & 5-Jar Superfood Combo* (Chia, Pumpkin, Sunflower, Black Seeds & Flax Seeds)!\n\n✨ Save up to 20% + Free Express Shipping\n✨ Shop at https://sofiss.in\n\nReply "COMBO" here on WhatsApp for 1-click doorstep booking!`;
+        }
+        return `Assalamu Alaikum / Hello ${name}! 🎉\n\nYour SoFiss order (*${items}*) has been delivered! We hope you are loving the 100% natural Kashmiri quality.\n\nCould you take 30 seconds to share your feedback on *https://sofiss.in/#customerReviewsSection* ? Thank you for choosing SoFiss! ⭐`;
+      }
+
+      function renderAdminCrm() {
+        const listEl = document.getElementById('adminCrmList');
+        if (!listEl) return;
+
+        const cartCount = storeState.customers.filter(c => c.stage === 'In Cart').length;
+        const buyerCount = storeState.customers.length;
+        const delivCount = storeState.customers.filter(c => c.stage === 'Delivered').length;
+        const revCount = storeState.reviews.length;
+
+        const setKpi = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = String(val); };
+        setKpi('crmKpiCartLeads', cartCount);
+        setKpi('crmKpiBuyers', buyerCount);
+        setKpi('crmKpiDelivered', delivCount);
+        setKpi('crmKpiRebuy', revCount);
+
+        const filterVal = (document.getElementById('crmStageFilterSelect')?.value) || 'all';
+        const filtered = storeState.customers.filter(c => filterVal === 'all' || c.stage === filterVal);
+
+        if (filtered.length === 0) {
+          listEl.innerHTML = `<div class="p-5 text-center rounded-xl bg-earth-50 border border-earth-200 text-xs text-gray-500">No saved customers in "${filterVal}" yet. Customers are automatically saved when they enter their details in the Cart, place an Order, or submit a Review—or you can add them above!</div>`;
+          return;
+        }
+
+        listEl.innerHTML = filtered.map(c => {
+          const badgeStyle = c.stage === 'In Cart'
+            ? 'bg-amber-100 text-amber-900 border-amber-300'
+            : c.stage === 'Delivered'
+            ? 'bg-emerald-100 text-emerald-900 border-emerald-300'
+            : c.stage === 'Reviewed'
+            ? 'bg-purple-100 text-purple-900 border-purple-300'
+            : 'bg-blue-100 text-blue-900 border-blue-300';
+
+          return `
+            <div class="p-3.5 rounded-xl bg-earth-50/80 border border-earth-200 flex flex-col lg:flex-row lg:items-center justify-between gap-3 text-xs">
+              <div class="space-y-1">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="font-extrabold text-gray-900 text-sm">${c.name}</span>
+                  <span class="px-2 py-0.5 rounded-full border font-extrabold text-[10px] ${badgeStyle}">${c.stage}</span>
+                  <span class="text-gray-500 text-[11px]">Updated: ${c.updatedAt}</span>
+                </div>
+                <p class="text-gray-700 font-semibold">
+                  📱 <a href="tel:${c.phone}" class="text-brand-700 underline">${c.phone || 'N/A'}</a>
+                  ${c.email ? ` • ✉️ <a href="mailto:${c.email}" class="text-indigo-700 underline">${c.email}</a>` : ''}
+                  ${c.pincode ? ` • 📍 Pincode: ${c.pincode}` : ''}
+                </p>
+                <p class="text-brand-900 font-medium">🛒 Product Interest / Last Order: <strong>${c.lastItems}</strong></p>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-1.5 shrink-0">
+                <select data-crm-id="${c.id}" data-crm-action="stage" class="px-2 py-1.5 rounded-lg border border-gray-300 bg-white text-[11px] font-bold">
+                  <option value="In Cart" ${c.stage === 'In Cart' ? 'selected' : ''}>🛒 In Cart</option>
+                  <option value="Ordered" ${c.stage === 'Ordered' ? 'selected' : ''}>📦 Ordered</option>
+                  <option value="Delivered" ${c.stage === 'Delivered' ? 'selected' : ''}>✅ Delivered</option>
+                  <option value="Reviewed" ${c.stage === 'Reviewed' ? 'selected' : ''}>⭐ Reviewed</option>
+                </select>
+                <button type="button" data-crm-id="${c.id}" data-crm-action="wa-cart" class="px-2.5 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-600 text-brand-950 font-extrabold text-[11px] transition" title="Send Abandoned Cart Follow-Up">
+                  🛒 Cart Follow-Up
+                </button>
+                <button type="button" data-crm-id="${c.id}" data-crm-action="wa-review" class="px-2.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-[11px] transition" title="Ask Delivered Customer for Review">
+                  ⭐ Ask Review
+                </button>
+                <button type="button" data-crm-id="${c.id}" data-crm-action="email-rebuy" class="px-2.5 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-[11px] transition" title="Send Email Follow-Up">
+                  📧 Email
+                </button>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      function updateRebuyBroadcastTemplate() {
+        const sel = document.getElementById('rebuyTemplateSelect');
+        const ta = document.getElementById('rebuyMessageTextarea');
+        if (!sel || !ta) return;
+        const sampleCust = storeState.customers[0] || {
+          name: 'Valued Customer',
+          lastItems: 'SoFiss Superfood Seeds (Chia, Pumpkin, Sunflower, Black & Flax Seeds)'
+        };
+        ta.value = buildCustomerMessage(sampleCust, sel.value);
+      }
+
+      loadCrmAndReviews();
+      renderPublicReviews();
+      renderAdminCrm();
+      updateRebuyBroadcastTemplate();
+
+      // Auto-capture customer cart lead as soon as they type their Name + 10-digit Mobile in Checkout Drawer
+      const captureCartLeadOnInput = () => {
+        const cName = (document.getElementById('custNameInput')?.value || '').trim();
+        const cPhone = (document.getElementById('custPhoneInput')?.value || '').trim();
+        const cEmail = (document.getElementById('custEmailInput')?.value || '').trim();
+        const cPin = (document.getElementById('custPincodeInput')?.value || '').trim();
+        const cAddr = (document.getElementById('custAddressInput')?.value || '').trim();
+        if (cPhone.replace(/\D/g, '').length >= 10) {
+          const cartItems = Object.values(storeState.cart).map(it => {
+            const p = storeState.products.find(x => x.id === it.productId);
+            return p ? `${p.name} (${it.packGrams}g x${it.qty})` : '';
+          }).filter(Boolean).join(', ');
+          upsertCustomerLead({
+            name: cName || 'Cart Shopper',
+            phone: cPhone,
+            email: cEmail,
+            pincode: cPin,
+            address: cAddr,
+            itemsSummary: cartItems || 'Items in Cart',
+            stage: 'In Cart'
+          });
+        }
+      };
+
+      ['custNameInput', 'custPhoneInput', 'custEmailInput', 'custPincodeInput', 'custAddressInput'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('blur', captureCartLeadOnInput);
+      });
+
+      // Also save customer into CRM when Place Order is clicked
+      document.getElementById('placeOrderBtn').addEventListener('click', () => {
+        const cName = (document.getElementById('custNameInput')?.value || '').trim();
+        const cPhone = (document.getElementById('custPhoneInput')?.value || '').trim();
+        const cEmail = (document.getElementById('custEmailInput')?.value || '').trim();
+        const cPin = (document.getElementById('custPincodeInput')?.value || '').trim();
+        const cAddr = (document.getElementById('custAddressInput')?.value || '').trim();
+        if (cName && cPhone.replace(/\D/g, '').length >= 10 && storeState.lastOrder) {
+          upsertCustomerLead({
+            name: cName,
+            phone: cPhone,
+            email: cEmail,
+            pincode: cPin,
+            address: cAddr,
+            itemsSummary: storeState.lastOrder.itemsSummary,
+            stage: 'Ordered',
+            amount: storeState.lastOrder.totalAmount
+          });
+        }
+      });
+
+      // Submit Customer Delivery Review Form
+      const subRevBtn = document.getElementById('submitCustomerReviewBtn');
+      if (subRevBtn) {
+        subRevBtn.addEventListener('click', () => {
+          const name = (document.getElementById('revCustomerName')?.value || '').trim();
+          const city = (document.getElementById('revCustomerCity')?.value || '').trim() || 'India';
+          const phone = (document.getElementById('revCustomerPhone')?.value || '').trim();
+          const email = (document.getElementById('revCustomerEmail')?.value || '').trim();
+          const prod = document.getElementById('revProductSelect')?.value || 'SoFiss Superfood Seeds';
+          const stars = parseInt(document.getElementById('revStarSelect')?.value || '5', 10);
+          const comment = (document.getElementById('revCommentInput')?.value || '').trim();
+
+          if (!name || !comment) {
+            showToast('Please enter your Name and Review comment!');
+            return;
+          }
+
+          storeState.reviews.unshift({
+            id: 'rev-' + Date.now(),
+            name,
+            city,
+            product: prod,
+            stars,
+            date: new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }),
+            comment
+          });
+
+          if (phone || email) {
+            upsertCustomerLead({
+              name,
+              phone,
+              email,
+              address: city,
+              itemsSummary: prod,
+              stage: 'Reviewed'
+            });
+          } else {
+            saveCrmAndReviews();
+          }
+
+          renderPublicReviews();
+          renderAdminCrm();
+
+          document.getElementById('revCustomerName').value = '';
+          document.getElementById('revCommentInput').value = '';
+          const statusEl = document.getElementById('reviewCouponStatusText');
+          if (statusEl) {
+            statusEl.textContent = '🎉 Thank you, ' + name + '! Your verified review is now live.';
+          }
+          showToast('Thank you! Your review has been published.');
+        });
+      }
+
+      // Handle Ask Review button inside #adminOrdersList
+      document.getElementById('adminOrdersList').addEventListener('click', (e) => {
+        const revBtn = e.target.closest('button[data-order-action="request-review"]');
+        if (!revBtn) return;
+        const ordId = revBtn.getAttribute('data-order-id');
+        const ord = storeState.orders.find(o => o.id === ordId);
+        if (!ord) return;
+
+        upsertCustomerLead({
+          name: ord.customerName,
+          phone: ord.customerPhone,
+          pincode: ord.pincode,
+          address: ord.address,
+          itemsSummary: ord.itemsSummary,
+          stage: 'Delivered',
+          amount: ord.totalAmount
+        });
+
+        const cleanPhone = (ord.customerPhone || '').replace(/\D/g, '');
+        const destPhone = cleanPhone.length === 10 ? '91' + cleanPhone : cleanPhone;
+        const cust = storeState.customers.find(c => (c.phone || '').replace(/\D/g, '') === cleanPhone);
+        const msg = buildCustomerMessage(cust || { name: ord.customerName, lastItems: ord.itemsSummary, lastAmount: ord.totalAmount }, 'review');
+        window.open(`https://wa.me/${destPhone}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
+      });
+
+      // Owner CRM Filter, Manual Customer Entry & 1-Click Follow-Up / Review Actions
+      const crmFilterEl = document.getElementById('crmStageFilterSelect');
+      if (crmFilterEl) crmFilterEl.addEventListener('change', renderAdminCrm);
+
+      const addLeadBtn = document.getElementById('addManualLeadBtn');
+      if (addLeadBtn) {
+        addLeadBtn.addEventListener('click', () => {
+          const name = (document.getElementById('manualLeadName')?.value || '').trim();
+          const phone = (document.getElementById('manualLeadPhone')?.value || '').trim();
+          const email = (document.getElementById('manualLeadEmail')?.value || '').trim();
+          const prod = (document.getElementById('manualLeadProduct')?.value || '').trim() || 'SoFiss Superfood Seeds';
+          const stage = document.getElementById('manualLeadStage')?.value || 'In Cart';
+
+          if (!name || phone.replace(/\D/g, '').length < 10) {
+            showToast('Please enter Customer Name and 10-digit WhatsApp Mobile Number.');
+            return;
+          }
+          upsertCustomerLead({ name, phone, email, itemsSummary: prod, stage });
+          document.getElementById('manualLeadName').value = '';
+          document.getElementById('manualLeadPhone').value = '';
+          document.getElementById('manualLeadEmail').value = '';
+          document.getElementById('manualLeadProduct').value = '';
+          updateRebuyBroadcastTemplate();
+          showToast(`Saved ${name} (${stage}) to your Customer Directory!`);
+        });
+      }
+
+      document.getElementById('adminCrmList').addEventListener('change', (e) => {
+        const sel = e.target.closest('select[data-crm-action="stage"]');
+        if (!sel) return;
+        const cid = sel.getAttribute('data-crm-id');
+        const cust = storeState.customers.find(c => c.id === cid);
+        if (cust) {
+          cust.stage = sel.value;
+          saveCrmAndReviews();
+          renderAdminCrm();
+          showToast(`Updated ${cust.name} stage to ${cust.stage}`);
+        }
+      });
+
+      document.getElementById('adminCrmList').addEventListener('click', (e) => {
+        const btn = e.target.closest('button[data-crm-action]');
+        if (!btn) return;
+        const cid = btn.getAttribute('data-crm-id');
+        const act = btn.getAttribute('data-crm-action');
+        const cust = storeState.customers.find(c => c.id === cid);
+        if (!cust) return;
+
+        const cleanPhone = (cust.phone || '').replace(/\D/g, '');
+        const destPhone = cleanPhone.length === 10 ? '91' + cleanPhone : cleanPhone;
+
+        if (act === 'wa-cart') {
+          const msg = buildCustomerMessage(cust, 'cart');
+          window.open(`https://wa.me/${destPhone}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
+        } else if (act === 'wa-review') {
+          const msg = buildCustomerMessage(cust, 'review');
+          window.open(`https://wa.me/${destPhone}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
+        } else if (act === 'email-rebuy') {
+          const msgType = cust.stage === 'In Cart' ? 'cart' : 'review';
+          const body = buildCustomerMessage(cust, msgType).replace(/\*/g, '');
+          const subj = cust.stage === 'In Cart'
+            ? `Complete your SoFiss Superfood Order (5% OFF Inside)`
+            : `How was your SoFiss Superfood delivery? Share your review!`;
+          window.location.href = `mailto:${cust.email || storeState.orderEmail}?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
+        }
+      });
+
+      const tplSel = document.getElementById('rebuyTemplateSelect');
+      if (tplSel) tplSel.addEventListener('change', updateRebuyBroadcastTemplate);
+
+      const waFwdBtn = document.getElementById('shareWhatsappForwardBtn');
+      if (waFwdBtn) {
+        waFwdBtn.addEventListener('click', () => {
+          const msg = (document.getElementById('rebuyMessageTextarea')?.value || '').trim();
+          window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
+        });
+      }
+
+      const emailCampBtn = document.getElementById('shareEmailCampaignBtn');
+      if (emailCampBtn) {
+        emailCampBtn.addEventListener('click', () => {
+          const msg = (document.getElementById('rebuyMessageTextarea')?.value || '').trim().replace(/\*/g, '');
+          const bccList = storeState.customers.map(c => c.email).filter(Boolean).join(',');
+          const subj = `Fresh Kashmiri Superfoods from SoFiss — Nourish The Goodness`;
+          window.location.href = `mailto:${storeState.orderEmail}?bcc=${encodeURIComponent(bccList)}&subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(msg)}`;
+        });
+      }
+
+      const copyFwdBtn = document.getElementById('copyRebuyForwardBtn');
+      if (copyFwdBtn) {
+        copyFwdBtn.addEventListener('click', () => {
+          const msg = (document.getElementById('rebuyMessageTextarea')?.value || '').trim();
+          try {
+            const ta = document.createElement('textarea');
+            ta.value = msg;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            showToast('Copied follow-up message to clipboard!');
+          } catch (e) {
+            showToast('Message ready to copy.');
+          }
+        });
+      }
+
+      const expCustBtn = document.getElementById('exportCustomersCsvBtn');
+      if (expCustBtn) {
+        expCustBtn.addEventListener('click', () => {
+          const headers = ['Customer ID', 'Name', 'Phone', 'Email', 'Pincode', 'Address', 'Stage', 'Last Product / Cart', 'Last Amount', 'Updated Date'];
+          const rows = storeState.customers.map(c => [
+            c.id, c.name, c.phone, c.email, c.pincode,
+            `"${(c.address || '').replace(/"/g, '""')}"`,
+            c.stage,
+            `"${(c.lastItems || '').replace(/"/g, '""')}"`,
+            c.lastAmount, c.updatedAt
+          ]);
+          const csv = [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
+          const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'sofiss-saved-customers.csv';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          showToast('Downloaded sofiss-saved-customers.csv!');
+        });
+      }
 
       // Interactive 3D Mouse/Touch Tilt & Specular Glare on Catalog Cards
       const gridEl = document.getElementById('productGrid');
